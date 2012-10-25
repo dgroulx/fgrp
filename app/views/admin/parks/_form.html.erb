@@ -1,5 +1,14 @@
 <%= simple_form_for [:admin, @park] do |f| %>
   <%= f.input :name %>
-
+  <%= f.input :history %>
+  <%= f.input :latitude, as: :string %>
+  <%= f.input :longitude, as: :string %>
+  <%= f.input :contact_info %>
+  <%= f.input :park_size, as: :string %>
+  <%= f.input :address %>
+  <%= f.input :vimeo_embed %>
+  <%= f.input :flicker_pool %>
+  <%= f.input :section %>
+   
   <%= f.button :submit %>
 <% end %>

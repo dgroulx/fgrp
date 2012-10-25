@@ -6,20 +6,9 @@ aberdeen:
   latitude: 1.5
   longitude: 1.5
   contact_info: MyText
-  park_size: 9.99
+  park_size: 1.5
   address: MyText
   vimeo_embed: MyText
   flicker_pool: MyString
   section: MyString
 
-two:
-  name: MyString
-  history: MyText
-  latitude: 1.5
-  longitude: 1.5
-  contact_info: MyText
-  park_size: 9.99
-  address: MyText
-  vimeo_embed: MyText
-  flicker_pool: MyString
-  section: MyString

@@ -1,20 +1,26 @@
 require 'test_helper'
 
+
 class AdminCanManageParks < ActionDispatch::IntegrationTest
   fixtures :parks
 
+  ParkMock = Struct.new(:name, :history, :latitude, :longitude, :contact_info, 
+                        :park_size, :address, :vimeo_embed, :flicker_pool, :section)
+  @@new_park = ParkMock.new
+  @@new_park.name = "Baldwin Park"
+  
   test "admin can create a park" do
     assert_difference('Park.count', 1) do
       visit admin_parks_path
       click_link "New Park"
-      fill_in :name, with: "Aberdeen Park"
+      fill_in :name, with: @@new_park[:name]
       click_button "Create Park"
-      assert page.has_content?("Aberdeen Park"), "Admin::Park#index should show park names"
+      assert page.has_content?(@@new_park.name), "Admin::Park#index should show park names"
     end
   end
 
   test "admin can update a park" do
-    @park = parks(:aberdeen)
+    @park = Park.first
     visit admin_parks_path
     click_link @park.name
     assert_equal @park.name, page.find("#park_name").value    
