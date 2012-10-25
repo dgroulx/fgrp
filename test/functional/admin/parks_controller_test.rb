@@ -2,16 +2,11 @@ require 'test_helper'
 
 class Admin::ParksControllerTest < ActionController::TestCase
   setup do
-    @park = parks(:one)
+    @park = parks(:aberdeen)
   end
 
   test "should get index" do
     get :index
-    assert_response :success
-  end
-
-  test "should show park" do
-    get :show, id: @park
     assert_response :success
   end
   
@@ -25,7 +20,7 @@ class Admin::ParksControllerTest < ActionController::TestCase
       post :create, park: { name: @park.name }
     end
 
-    assert_redirected_to admin_park_path(assigns(:park))
+    assert_redirected_to admin_parks_path
   end
 
   test "should get edit" do
@@ -35,7 +30,7 @@ class Admin::ParksControllerTest < ActionController::TestCase
 
   test "should update park" do
     put :update, id: @park, park: { name: @park.name }
-    assert_redirected_to admin_park_path(assigns(:park))
+    assert_redirected_to admin_parks_path
   end
 
   test "should destroy park" do

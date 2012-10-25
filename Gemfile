@@ -40,3 +40,13 @@ group :develop do
   gem 'rb-fsevent', require: false
   gem 'terminal-notifier-guard', require: false
 end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'poltergeist'
+  gem 'launchy'
+end
+
+  
+        

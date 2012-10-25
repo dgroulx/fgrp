@@ -1,8 +1,6 @@
 class Admin::ParksController < ApplicationController
   def index
-  end
-
-  def show
+    @parks = Park.all
   end
 
   def new
@@ -13,18 +11,19 @@ class Admin::ParksController < ApplicationController
     @park = Park.new(params[:park])
 
     if @park.save
-      redirect_to admin_park_path(@park)
+      redirect_to admin_parks_path
     end
   end
 
   def edit
+    @park = Park.find(params[:id])
   end
 
   def update
     @park = Park.find(params[:id])
 
     if @park.update_attributes(params[:park])
-      redirect_to admin_park_path(@park)
+      redirect_to admin_parks_path
     end
   end
 

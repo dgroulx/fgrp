@@ -6,7 +6,7 @@ class CreateParks < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.text :contact_info
-      t.decimal :park_size
+      t.float :park_size
       t.text :address
       t.text :vimeo_embed
       t.string :flicker_pool
