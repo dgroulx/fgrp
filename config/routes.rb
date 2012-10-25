@@ -2,6 +2,8 @@ Fgrp::Application.routes.draw do
   namespace :admin do
     resources :parks
   end
+
+  resources :parks, only: [:index, :show]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
