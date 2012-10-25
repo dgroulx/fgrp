@@ -1,4 +1,11 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "parks" %>
+<% end %>
+
+<%= hidden_field_tag :park_slug, @park.to_param %>
 <%= @park.name %>
 
 History:
 <%= @park.history %>
+
+<div id="map_canvas" style="width:300px; height:300px"></div>

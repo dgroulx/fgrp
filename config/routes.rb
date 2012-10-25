@@ -1,6 +1,6 @@
 Fgrp::Application.routes.draw do
   namespace :admin do
-    resources :parks
+    resources :parks, except: [:show]
   end
 
   resources :parks, only: [:index, :show]
