@@ -1,4 +1,4 @@
-class Admin::ParksController < ApplicationController
+class Admin::ParksController < Admin::AdminController
   def index
     @parks = Park.all
   end

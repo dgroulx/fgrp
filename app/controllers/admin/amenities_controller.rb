@@ -1,4 +1,4 @@
-class Admin::AmenitiesController < ApplicationController
+class Admin::AmenitiesController < Admin::AdminController
   def index
     @amenities = Amenity.all
   end

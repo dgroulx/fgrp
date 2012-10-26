@@ -8,6 +8,9 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     Park.all.map(&:name).each do |park_name|
       assert page.has_content?(park_name)
     end
+
+    click_link "Dashboard"
+    assert page.has_content?("Dashboard")
   end
 
   test "admin can reash amenities from the dashboard" do
@@ -16,5 +19,8 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     Amenity.all.map(&:name).each do |amenity_name|
       assert page.has_content?(amenity_name)
     end
+
+    click_link "Dashboard"
+    assert page.has_content?("Dashboard")
   end
 end
