@@ -18,6 +18,10 @@ class VisitorCanBrowseParksTest < ActionDispatch::IntegrationTest
   end
 
   test "Visitor can see amenities on the park's page" do
-
+    park = parks(:aberdeen)
+    visit park_path(park)
+    park.amenities.map(&:name).each do |amenity_name|
+      assert page.has_content?(amenity_name), "Parks#show is not displaying all amenities"
+    end
   end
 end

@@ -5,6 +5,11 @@
 <%= hidden_field_tag :park_slug, @park.to_param %>
 <%= @park.name %>
 
+Amenities:
+<% @park.amenities.each do |amenity| %>
+  <%= amenity.name %>
+<% end %>
+
 History:
 <%= @park.history %>
 

@@ -17,7 +17,7 @@ class Admin::ParksControllerTest < ActionController::TestCase
 
   test "should create park" do
     assert_difference('Park.count') do
-      post :create, park: { name: @park.name }
+      post :create, park: { name: "New Park Name" }
     end
 
     assert_redirected_to admin_parks_path

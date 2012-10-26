@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AdminCanManageParks < ActionDispatch::IntegrationTest
-  fixtures :parks
+  fixtures :parks, :amenities, :park_amenities
 
   ParkMock = Struct.new(:name, :history, :latitude, :longitude, :contact_info, 
                         :park_size, :address, :vimeo_embed, :flicker_pool, :section)
@@ -42,7 +42,16 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
 
   test "admin can add amenities to a park" do
     @park = parks(:aberdeen)
-    visit edit_admin_parks_path(@park)
+    visit edit_admin_park_path(@park)
+    
+    # Confirm amenities set by default
+    @park.amenities.each do |amenity| 
+      assert page.find(:xpath, %Q{//label[text()="#{amenity.name}"]/input}).value, "Amenity checkboxes are not set by default"
+    end
 
+    check 'Parking'
+    click_button "Update Park"
+    @park.reload
+    assert @park.amenities.map(&:name).include?("Parking"), "Park amenities were not updated by the park form"
   end
 end

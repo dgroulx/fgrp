@@ -1,7 +1,4 @@
-one:
-  park_id: 1
-  amenity_id: 1
+aberdeen_playground:
+  park: aberdeen
+  amenity: playground
 
-two:
-  park_id: 1
-  amenity_id: 1
