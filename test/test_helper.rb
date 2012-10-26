@@ -34,3 +34,11 @@ class ActionDispatch::IntegrationTest
     Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
   end
 end
+
+def clean_attributes(ar_object)
+  hash = ar_object.attributes
+  hash.delete('id')
+  hash.delete('created_at')
+  hash.delete('updated_at')
+  hash
+end

@@ -9,6 +9,7 @@
   <%= f.input :vimeo_embed %>
   <%= f.input :flicker_pool %>
   <%= f.input :section %>
-   
+  <%= f.association :amenities, as: :check_boxes %> 
+  
   <%= f.button :submit %>
 <% end %>

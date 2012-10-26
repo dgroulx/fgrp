@@ -16,4 +16,8 @@ class VisitorCanBrowseParksTest < ActionDispatch::IntegrationTest
     click_link target_park.name
     assert page.has_content?(target_park.history)
   end
+
+  test "Visitor can see amenities on the park's page" do
+
+  end
 end

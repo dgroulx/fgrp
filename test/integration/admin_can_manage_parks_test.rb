@@ -39,4 +39,10 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
 
     assert_false page.has_content?(@park.name)
   end
+
+  test "admin can add amenities to a park" do
+    @park = parks(:aberdeen)
+    visit edit_admin_parks_path(@park)
+
+  end
 end
