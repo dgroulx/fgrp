@@ -2,6 +2,7 @@ Fgrp::Application.routes.draw do
   namespace :admin do
     resources :parks, except: [:show]
     resources :amenities, except: [:show]
+    root to: "dashboard#index"
   end
 
   resources :parks, only: [:index, :show]
