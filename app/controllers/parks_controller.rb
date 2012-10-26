@@ -4,6 +4,6 @@ class ParksController < ApplicationController
   end
 
   def show
-    @park = Park.find(params[:id])
+    @park = Park.find_by_slug(params[:id])
   end
 end

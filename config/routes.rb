@@ -6,6 +6,7 @@ Fgrp::Application.routes.draw do
   end
 
   resources :parks, only: [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -9,6 +9,7 @@ aberdeen:
   vimeo_embed: 29630577
   flicker_pool: MyString
   section: MyString
+  slug: aberdeen-park
 
 butterworth:
   name: Butterworth Riverfront
@@ -21,3 +22,4 @@ butterworth:
   vimeo_embed: MyText
   flicker_pool: MyString
   section: MyString
+  slug: butterworth-riverfront

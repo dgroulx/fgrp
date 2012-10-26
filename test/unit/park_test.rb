@@ -16,4 +16,9 @@ class ParkTest < ActiveSupport::TestCase
     new_park = Park.new(clean_attributes(@park))
     assert_false new_park.valid?, "Park names must be unique"
   end
+
+  test 'parks should generate urls based on their name' do
+    # Test slug generation method since fixtures don't trigger callbacks
+    assert_equal "aberdeen-park", @park.to_param, "Park#to_param should generate nice slugs for URLs"
+  end
 end
