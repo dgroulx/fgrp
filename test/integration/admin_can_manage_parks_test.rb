@@ -1,6 +1,5 @@
 require 'test_helper'
 
-
 class AdminCanManageParks < ActionDispatch::IntegrationTest
   fixtures :parks
 
@@ -15,7 +14,7 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
       click_link "New Park"
       fill_in :name, with: @@new_park[:name]
       click_button "Create Park"
-      assert page.has_content?(@@new_park.name), "Admin::Park#index should show park names"
+      assert page.has_content?(@@new_park.name), "Admin::Parks#index should show park names"
     end
   end
 
@@ -26,15 +25,18 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
     assert_equal @park.name, page.find("#park_name").value    
     fill_in :name, with: "New Park Name"
     click_button "Update Park"
-    assert page.has_content?("New Park Name"), "Admin::Park#update should update parks"   
+    assert page.has_content?("New Park Name"), "Admin::Parks#update should update parks"   
   end
 
   test "admin can delete a park" do
     @park = parks(:aberdeen)
     visit admin_parks_path
-    within(:xpath, %Q{//td[a[text()="#{@park.name}"]]/parent::tr}) do
-      click_link "Delete"
-    end  
+    assert_difference('Park.count', -1) do
+      within(:xpath, %Q{//td[a[text()="#{@park.name}"]]/parent::tr}) do
+        click_link "Delete"
+      end  
+    end
+
     assert_false page.has_content?(@park.name)
   end
 end

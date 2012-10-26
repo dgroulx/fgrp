@@ -1,0 +1,16 @@
+Amenities
+
+<%= link_to "New Amenity", new_admin_amenity_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  <tr/>
+  <% @amenities.each do |amenity| %>
+  <tr>
+    <td><%= link_to amenity.name, edit_admin_amenity_path(amenity) %></td>
+    <td><%= link_to "Delete", [:admin, amenity], method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
