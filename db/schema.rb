@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025015408) do
+ActiveRecord::Schema.define(:version => 20121025234749) do
 
   create_table "parks", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20121025015408) do
     t.text     "contact_info"
     t.float    "park_size"
     t.text     "address"
-    t.text     "vimeo_embed"
+    t.string   "vimeo_embed"
     t.string   "flicker_pool"
     t.string   "section"
     t.datetime "created_at",   :null => false

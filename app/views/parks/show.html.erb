@@ -9,3 +9,6 @@ History:
 <%= @park.history %>
 
 <div id="map_canvas" style="width:300px; height:300px"></div>
+<% if @park.vimeo_embed.present? %>
+  <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<% end %>
