@@ -1,7 +1,15 @@
+var myLatLong = new google.maps.LatLng(<%= "#{@park.latitude}, #{@park.longitude}" %>);
 var mapOptions = {
-  center: new google.maps.LatLng(<%= "#{@park.latitude}, #{@park.longitude}" %>),
+  center: myLatLong,
   zoom: 15,
   mapTypeId: google.maps.MapTypeId.ROADMAP,
   disableDefaultUI: true
 };
 var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+var marker = new google.maps.Marker({
+      position: myLatLong,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title:'<%="#{@park.name}"%>'
+  });

@@ -6,9 +6,11 @@
 <%= @park.name %>
 
 Amenities:
+<ul>
 <% @park.amenities.each do |amenity| %>
-  <%= amenity.name %>
+  <li><%= amenity.name %></li>
 <% end %>
+</ul>
 
 History:
 <%= @park.history %>
