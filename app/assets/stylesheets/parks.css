@@ -111,6 +111,7 @@ strong
 
 a{
   color: #91b24e;
+  /*font-weight: bold;*/
   }
 h1,h2,h3,h4,h5,h6{
   font-family: "omnes-pro",sans-serif;
@@ -190,12 +191,17 @@ body{
 
     aside{
       float: left;
+      clear: left;
       display: inline;
       width: 280px;
       width: 31%;
       padding: 0 20px;
       background: url(bg_sidebar.png) 0 0 repeat;
       }
+    aside + aside{
+      margin-top: 30px;
+      }
+
     div[role="main"]{
       float: right;
       width: 590px;
@@ -207,28 +213,58 @@ body{
     }
 
 
-
 .map{ /* index */
   padding: 10px 0;
   border: solid #5f9f50;
   border-width: 1px 0;
   }
 
-.amenities{ /* show */
-  background: #eee6d0;
-  padding: 20px 0 20px 20px;
+section + section{
+  border-top: solid 5px #eee6d0;
+  margin-top: 30px;
   }
-  .amenities h2{
+section:before,
+section:after {
+  content: " ";
+  display: table;
+  }
+section:after {
+  clear: both;
+  }
+section {
+  *zoom: 1;
+  }
+
+
+  section img,
+  #map_canvas /* show */
+  {
+    float: right;
+    width: 435px;
+    margin-left: 30px;
+  }
+  section ul li{
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+    }
+
+.section-amenities{
+  padding: 20px 0 20px 20px;
+  background: #eee6d0;
+  }
+  .section-amenities h2{
     margin-top: 0;
     }
-  .amenities ul{
+  .section-amenities ul{
     margin-bottom: 0;
     }
-    .amenities ul li{
-      float: left;
-      width: 50%;
-      padding-right: 20px;
-      }
+
+.section-notice{
+  font-size: 12px;
+  line-height:  18px;
+  border-top: none;
+  }
 
 
 

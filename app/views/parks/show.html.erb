@@ -13,28 +13,6 @@
 
     <%= render partial: "common/header" %>
 
-    <aside>
-
-      <h1>explore the city</h1>
-      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
-
-      <hr/>
-
-      <h2>park facts</h2>
-      <dl>
-        <dt>Smallest city park</dt>
-          <dd>Sundial Park, 0.005 acres</dd>
-        <dt>largest city park</dt>
-          <dd>Aman Park, 331 acres</dd>
-        <dt>largest city park in city limits</dt>
-          <dd>Riverside Park, 180.95 acres</dd>
-        <dt>total city owned park acres</dt>
-          <dd>1,591 acres</dd>
-      </dl>
-      <p><a href="#">learn more</a></p>
-
-    </aside>
-
     <div role="main">
 
       <h1><%= @park.name %></h1>
@@ -45,26 +23,78 @@
         <li><strong><%= @park.contact_info %></strong></li>
       </ul>
 
-      <%= @park.history %>
+      <section class="section-history">
+        <%= @park.history %>
+      </section><!-- .section-history //-->
 
-      <div class="amenities">
+      <section class="section-amenities">
         <h2>features and amenities</h2>
         <ul class="clearfix">
         <% @park.amenities.each do |amenity| %>
           <li><strong><%= amenity.name %></strong> - descripton</li>
         <% end %>
         </ul>
-      </div><!-- .amenties //-->
+      </section><!-- .section-amenties //-->
 
+      <section class="section-links">
+        <h2>park links</h2>
+        <ul class="clearfix">
+          <li><a href="#">Lorem ipsum map link 1</a></li>
+          <li><a href="#">Lorem ipsum document link 2</a></li>
+          <li><a href="#">Lorem ipsum document link 3</a></li>
+        </ul>
+      </section><!-- .section-links //-->
+
+      <section class="section-photos">
+        <%= image_tag("placeholder-treephoto.jpg") %>
+        <h2>photos</h2>
+        <p>Have a picture of this park? <a href="#">Add it to the collection!</a></p>
+
+      </section><!-- .section-photos //-->
 
       <% if @park.vimeo_embed.present? %>
         <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
       <% end %>
 
-      <div id="map_canvas" style="width:300px; height:300px"></div>
+      <section class="section-map">
+        <div id="map_canvas" style="width:435px; height:300px"></div>
+        <h2>map</h2>
+        <p>Explore this park and <a href="#">add a tree to our Tree Map.</a></p>
+      </section><!-- .section-map //-->
+
+      <section class="section-notice">
+        <p>The Friends of Grand Rapids Parks is not a department of the city, and cannot take reservations. Contact Special Events at 616.456.3378 for park reservations.</p>
+      </section>
 
     </div><!-- role="main" //-->
 
+    <aside>
+
+      <h1>great parks make great neigborhoods</h1>
+      <p>
+        great parks make great neighborhoods
+        The Friends of Grand Rapids Parks is an independent, citizen led, nonprofit enterprise founded in 2008, working closely with but separate from the city. Our mission is to identify specific park projects, mobilize people, and generate resources to protect, enhance, and expand the city's parks and public spaces. <a href="#">Learn more</a>
+      </p>
+      <hr/>
+
+      <h2>do your part for this park</h2>
+      <p>
+        <a href="#">See the volunteer opportunities</a><br>
+        <a href="#">Donate to make your park better</a>
+      </p>
+
+    </aside>
+
+    <aside>
+      <h2>parks alive</h2>
+      <p>A venture to reclaim and sustain parks lorem ipsum dolor sent.</p>
+      <p><strong>park contact</strong> <a href="mailto:#">First Last</a></p>
+      <p>
+        <a href="#">Submit a Parks Alive report card</a><br>
+        <a href="#">Download the guidelines</a> (pdf)<br>
+        <a href="#">Download the handbook</a> (pdf)
+      </p>
+    </aside>
 
   </div><!-- .wrapper //-->
 </div><!-- .page-body //-->
