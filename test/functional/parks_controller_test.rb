@@ -8,11 +8,11 @@ class ParksControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert_equal 4, assigns(:facts).count, "Park#show should include 4 facts"
   end
 
   test "should show park" do
     get :show, id: @park
     assert_response :success
-    assert_equal 4, assigns(:facts).count, "Park#show should include 4 facts"
   end
 end
