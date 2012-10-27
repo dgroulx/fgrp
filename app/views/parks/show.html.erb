@@ -27,6 +27,7 @@
         <%= @park.history %>
       </section><!-- .section-history //-->
 
+      <% if @park.amenities.present? %>
       <section class="section-amenities">
         <h2>features and amenities</h2>
         <ul class="clearfix">
@@ -35,15 +36,18 @@
         <% end %>
         </ul>
       </section><!-- .section-amenties //-->
+      <% end %>
 
+      <% if @park.links.present? %>
       <section class="section-links">
         <h2>park links</h2>
         <ul class="clearfix">
-          <li><a href="#">Lorem ipsum map link 1</a></li>
-          <li><a href="#">Lorem ipsum document link 2</a></li>
-          <li><a href="#">Lorem ipsum document link 3</a></li>
+        <% @park.links.each do |link| %>
+          <li><a href="<%= link.url %>"><%= link.name %></a></li>
+        <% end %>
         </ul>
       </section><!-- .section-links //-->
+      <% end %>
 
       <section class="section-photos">
         <div id="flickr-pool-slideshow" data-flickr-group="<%= @park.flickr_pool %>"></div>
