@@ -6,6 +6,22 @@
 
     <%= render partial: "common/header" %>
 
+    <aside>
+      <h1>explore the city</h1>
+      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
+
+      <hr/>
+
+      <h2>park facts</h2>
+      <dl>
+      <% @facts.each do |fact| %>
+        <dt><%= fact.question %></dt>
+        <dd><%= fact.answer %></dd>
+      <% end %>
+      </dl>  
+      <p><a href="#">learn more</a></p>
+
+    </aside>
     <div role="main">
 
       <h1>our parks</h1>
@@ -15,18 +31,20 @@
 
       <form>
 
-        <select>
-          <option>Search by amenity</option>
-        </select>
+        <select class="amenities" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
+			<% @amenities.each do |amenity| %>
+			  <option value="<%= amenity.id %>"><%= amenity.name %></option>
+			<% end %>
+       </select>
+       
+       Number of matching parks: <span class="parkCount">0</span>
 
-        <select>
+        <!-- select>
           <option>Select park</option>
           <% @parks.each do |park| %>
             <option value="<%= park_path(park) %>"><%= park.name %></option>
           <% end %>
-        </select>
-
-
+        </select -->
 
       </form>
 

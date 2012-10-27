@@ -1,12 +1,13 @@
 class ParksController < ApplicationController
   def index
-  @amenities = Amenity.all
-  if params[:amenity_id].present?
-    @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
-  else 
-    @parks = Park.all
-  end
-
+    @amenities = Amenity.all
+    if params[:amenity_id].present?
+      @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
+    else 
+      @parks = Park.all
+    end
+    @facts = Fact.find(Fact.pluck(:id).sample(4))
+  
     respond_to do |format|
       format.html
       format.js
@@ -16,12 +17,11 @@ class ParksController < ApplicationController
 
   def show
     @park = Park.find_by_slug(params[:id])
-    
+
     respond_to do |format|
       format.html
       format.js
       format.json { render json: @park.to_json }
     end
   end
-
-  end
+end
