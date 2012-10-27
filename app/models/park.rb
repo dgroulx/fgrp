@@ -5,6 +5,7 @@ class Park < ActiveRecord::Base
   has_many :amenities, through: :park_amenities
 
   validates :name, presence: true, uniqueness: true
+  validates :address, :longitude, :latitude, :park_size, presence: true
 
   before_create :generate_slug
   before_save :generate_slug

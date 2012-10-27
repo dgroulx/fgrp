@@ -11,6 +11,8 @@ class Admin::ParksController < Admin::AdminController
   def create
     if @park.save
       redirect_to admin_parks_path
+    else
+      render :new
     end
   end
 
