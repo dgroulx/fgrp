@@ -7,7 +7,7 @@ aberdeen:
   park_size: 1.5
   address: MyText
   vimeo_embed: 29630577
-  flicker_pool: MyString
+  flickr_pool: MyString
   section: MyString
   slug: aberdeen-park
 
@@ -20,6 +20,6 @@ butterworth:
   park_size: 1.5
   address: MyText
   vimeo_embed: MyText
-  flicker_pool: MyString
+  flickr_pool: MyString
   section: MyString
   slug: butterworth-riverfront
