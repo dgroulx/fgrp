@@ -164,7 +164,7 @@ body{
         width: 280px;
         width: 31%;
         height: 104px;
-        background: url(logo_fgrp.png) 50% 0 no-repeat;
+        background: url(../logo_fgrp.png) 50% 0 no-repeat;
         /* border-bottom: solid 1px #5f9f50; */
         }
 
@@ -179,7 +179,7 @@ body{
           display: block;
           width: 22px;
           height: 22px;
-          background: url(icons_social.png) no-repeat;
+          background: url(../icons_social.png) no-repeat;
           text-indent: 100%;
           white-space: nowrap;
           overflow: hidden;
