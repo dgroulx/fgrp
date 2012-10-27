@@ -55,4 +55,13 @@ $(document).ready(function() {
 	} else {
 		buildMap(42.9633, -85.6681, 12, 'parks.json');
 	}
+
+  if ($("#galleria-flickr").length > 0) {
+    Galleria.run("#galleria-flickr", {
+      flickr: 'set:' + $("#galleria-flickr").data("flickr-set"),
+      flickrOptions: {
+        sort: 'date-posted-asc'
+      }
+    });
+  }
 });
