@@ -1,0 +1,18 @@
+Facts
+
+<%= link_to "New Fact", new_admin_fact_path %>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th></th>
+  </tr>>
+  <%= @facts.each do |fact| %>
+  <tr>
+    <td><%= fact.question %></td>
+    <td><%= fact.answer %></td>
+    <td><%= link_to "Edit", edit_admin_fact_path(fact) %>|<%= link_to "Delete", [:admin, fact], method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
