@@ -46,8 +46,7 @@
       </section><!-- .section-links //-->
 
       <section class="section-photos">
-        <div id="galleria-flickr" data-flickr-set="<%= @park.flickr_pool %>"></div>
-        <%#= image_tag("placeholder-treephoto.jpg") %>
+        <div id="flickr-pool-slideshow" data-flickr-group="<%= @park.flickr_pool %>"></div>
         <h2>photos</h2>
         <p>Have a picture of this park? <a href="http://www.flickr.com/groups/<%= @park.flickr_pool %>">Add it to the collection!</a></p>
 

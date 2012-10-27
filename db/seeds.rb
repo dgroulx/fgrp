@@ -13,7 +13,7 @@ if Rails.env != "production"
 	Park.destroy_all
 	Park.create([
 		{name: "Ah-Nab-Awen", latitude: 42.9683, longitude: -85.6767, address: "220 Front Ave NW Grand Rapids", flickr_pool: "1290983@N23" },
-		{name: "Aberdeen Park", latitude: 43.0045, longitude: -85.6497, address: "Eastern at Evelyn NE Grand Rapids"},
+		{name: "Aberdeen Park", latitude: 43.0045, longitude: -85.6497, address: "Eastern at Evelyn NE Grand Rapids", flickr_pool: "1238780@N25"},
 		{name: "Highland Park", latitude: 42.9754, longitude: -85.657, address: "700 College NE Grand Rapids"},
 		])
 

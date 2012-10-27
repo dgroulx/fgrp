@@ -56,12 +56,25 @@ $(document).ready(function() {
 		buildMap(42.9633, -85.6681, 12, 'parks.json');
 	}
 
-  if ($("#galleria-flickr").length > 0) {
-    Galleria.run("#galleria-flickr", {
-      flickr: 'set:' + $("#galleria-flickr").data("flickr-set"),
-      flickrOptions: {
-        sort: 'date-posted-asc'
+  if ($('#flickr-pool-slideshow').length > 0) {
+    $('#flickr-pool-slideshow').each(function() {
+      var element = $(this);
+      var key = "40343c1f16327beb5c9adfd73caec372";
+      var group_id = element.data("flickr-group");
+      var api_method = "flickr.groups.pools.getPhotos&group_id=" + group_id;
+
+      var callback = function(data) {
+        if (data.stat == "ok") {
+          var data = $.map(data.photos.photo, function(photo) {
+            return '<img src="http://farm' + photo.farm + '.static.flickr.com/' + photo.server +'/' + photo.id + '_' + photo.secret + '_m.jpg" />' 
+          });
+          console.log(data.join('')); 
+          element.html(data.join(''));
+          element.cycle();
+        }
       }
+
+      $.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&api_key=" + key + "&method="+ api_method, callback);
     });
   }
 });

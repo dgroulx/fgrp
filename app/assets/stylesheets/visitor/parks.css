@@ -237,7 +237,8 @@ section {
 
 
   section img,
-  #map_canvas /* show */
+  #map_canvas,
+  #flickr-pool-slideshow
   {
     float: right;
     width: 435px;
