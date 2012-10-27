@@ -49,11 +49,13 @@
       </section><!-- .section-links //-->
       <% end %>
 
-       <section class="section-photos">
+      <% if @park.flickr_pool.present? %>
+      <section class="section-photos">
         <div id="flickr-pool-slideshow" data-flickr-group="<%= @park.flickr_pool %>"></div>
         <h2>photos</h2>
         <p>Have a picture of this park? <a href="http://www.flickr.com/groups/<%= @park.flickr_pool %>">Add it to the collection!</a></p>
       </section><!-- .section-photos //-->
+      <% end %>
 
 
       <% if @park.vimeo_embed.present? %>
