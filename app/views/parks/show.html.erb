@@ -1,7 +1,6 @@
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "parks" %>
 <% end %>
-
 <%= hidden_field_tag :park_slug, @park.to_param %>
 <%= @park.name %>
 
@@ -14,7 +13,7 @@ Amenities:
 
 History:
 <%= @park.history %>
-
+<button id="clear-markers">Clear Markers</button>
 <div id="map_canvas" style="width:300px; height:300px"></div>
 <% if @park.vimeo_embed.present? %>
   <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
