@@ -1,10 +1,15 @@
 require 'test_helper'
 
 class AdminDashboardTest < ActionDispatch::IntegrationTest
-  fixtures :parks, :amenities
+  fixtures :parks, :amenities, :users
+
+  def setup
+    sign_in
+  end
+
   test "admin can reach parks from the dashboard" do
     visit admin_root_path
-    click_link "Manage Parks"
+    click_link "Parks"
     Park.all.map(&:name).each do |park_name|
       assert page.has_content?(park_name)
     end
@@ -15,7 +20,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "admin can reash amenities from the dashboard" do
     visit admin_root_path
-    click_link "Manage Amenities"
+    click_link "Amenities"
     Amenity.all.map(&:name).each do |amenity_name|
       assert page.has_content?(amenity_name)
     end

@@ -3,6 +3,10 @@ require 'test_helper'
 class AdminCanManageAmenitiesTest < ActionDispatch::IntegrationTest
   fixtures :amenities
 
+  def setup
+    sign_in
+  end
+
   test "admin can create a amenity" do
     assert_difference('Amenity.count', 1) do
       visit admin_amenities_path

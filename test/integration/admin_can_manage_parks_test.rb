@@ -7,7 +7,11 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
                         :park_size, :address, :vimeo_embed, :flicker_pool, :section)
   @@new_park = ParkMock.new
   @@new_park.name = "Baldwin Park"
-  
+
+  def setup
+    sign_in
+  end
+
   test "admin can create a park" do
     assert_difference('Park.count', 1) do
       visit admin_parks_path
