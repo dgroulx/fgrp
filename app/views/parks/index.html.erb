@@ -15,15 +15,11 @@
 
       <h2>park facts</h2>
       <dl>
-        <dt>Smallest city park</dt>
-          <dd>Sundial Park, 0.005 acres</dd>
-        <dt>largest city park</dt>
-          <dd>Aman Park, 331 acres</dd>
-        <dt>largest city park in city limits</dt>
-          <dd>Riverside Park, 180.95 acres</dd>
-        <dt>total city owned park acres</dt>
-          <dd>1,591 acres</dd>
-      </dl>
+      <% @facts.each do |fact| %>
+        <dt><%= fact.question %></dt>
+        <dd><%= fact.answer %></dd>
+      <% end %>
+      </dl>  
       <p><a href="#">learn more</a></p>
 
     </aside>
