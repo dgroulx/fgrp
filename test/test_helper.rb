@@ -12,6 +12,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include Devise::TestHelpers
 end
 
 # Transactional fixtures do not work with Selenium tests, because Capybara

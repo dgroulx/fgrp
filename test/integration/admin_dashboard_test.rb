@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class AdminDashboardTest < ActionDispatch::IntegrationTest
-  fixtures :parks, :amenities
+  fixtures :parks, :amenities, :users
+
+  def setup
+    sign_in(users(:admin))
+  end
+
   test "admin can reach parks from the dashboard" do
     visit admin_root_path
     click_link "Manage Parks"
