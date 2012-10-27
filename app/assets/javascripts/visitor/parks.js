@@ -93,4 +93,25 @@ prettify();
 	    $('aside').append('<span class="concave-corner"></span>')
 	  }
 	}
+
+  if ($('#flickr-pool-slideshow').length > 0) {
+    $('#flickr-pool-slideshow').each(function() {
+      var element = $(this);
+      var key = "40343c1f16327beb5c9adfd73caec372"; // david_groulx@me.com's flicker key, need to get a new one
+      var group_id = element.data("flickr-group");
+      var api_method = "flickr.groups.pools.getPhotos&group_id=" + group_id;
+
+      var callback = function(data) {
+        if (data.stat == "ok") {
+          var data = $.map(data.photos.photo, function(photo) {
+            return '<img src="http://farm' + photo.farm + '.static.flickr.com/' + photo.server +'/' + photo.id + '_' + photo.secret + '_m.jpg" />' 
+          });
+          element.html(data.join(''));
+          element.cycle();
+        }
+      }
+
+      $.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&api_key=" + key + "&method="+ api_method, callback);
+    });
+  }
 });
