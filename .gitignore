@@ -7,6 +7,8 @@
 # Ignore bundler config
 /.bundle
 
+.rvmrc
+
 # Ignore vendor install
 /vendor/ruby/*
 
@@ -19,3 +21,6 @@
 
 # Ignore vim trash
 *.swp
+
+# 
+.DS_Store

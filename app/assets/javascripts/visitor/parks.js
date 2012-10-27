@@ -13,7 +13,7 @@ $(document).ready(function() {
 		if (! (data instanceof Array)) {
 			data = [data];
 		}
-			
+
 		$.each(data, function(i, park) {
 			//console.log(park.name + ": " + park.latitude + ", " + park.longitude);
 			var marker = new google.maps.Marker({
@@ -30,7 +30,7 @@ $(document).ready(function() {
 		$canvas.data('markers', markers);
 		$('.parkCount').html(markers.length);
 	}
-	
+
 	var buildMap = function(lat, long, zoom, url) {
 		var mapOptions = {
 			center : new google.maps.LatLng(lat, long), // grand rapids lat/long
@@ -44,7 +44,7 @@ $(document).ready(function() {
 	};
 
 	$('select.amenities').chosen({no_results_text: "No results matched"}).change(function(e) {
-		var selected = $(this).val(); 
+		var selected = $(this).val();
 		if (selected && selected.length > 0) {
 			var resource = 'parks.json?';
 			$.each(selected, function(i) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 		}
 		$.getJSON(resource, refreshParkList);
 	});
-	
+
 	if ($("#park_slug").val()) {
 		var resource = '/parks/' + $("#park_slug").val()  + '.json';
 		var lat = $("#park_lat").val();
@@ -63,4 +63,15 @@ $(document).ready(function() {
 	} else {
 		buildMap(42.9633, -85.6681, 12, 'parks.json');
 	}
+
+	prettify();
+
 });
+
+
+
+function prettify(){
+  for(i=0;i<4;i++){
+    $('aside').append('<span class="concave-corner"></span>')
+  }
+}

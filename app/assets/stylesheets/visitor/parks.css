@@ -155,52 +155,155 @@ body{
       text-align: left;
       }
     header{
-      padding-bottom: 30px;
+      position: relative;
+      margin-bottom: 30px;
+      border-bottom: solid 1px #5f9f50;
       }
-      header > *{
-        float: left;
-        margin-left: 30px;
-        height: 114px;
-        border-bottom: solid 1px #5f9f50;
-        }
-      header > *:first-child{
-        margin-left: 0;
-        }
       .logo{
+        float: left;
         width: 280px;
         width: 31%;
-        height: 114px;
-        background: url(../logo_fgrp.png) 50% 10px no-repeat;
+        height: 104px;
+        background: url(../logo_fgrp.png) 50% 0 no-repeat;
+        /* border-bottom: solid 1px #5f9f50; */
         }
-      header > ul{
-        width: 125px;
-        padding: 12px 0 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        border-top: solid 1px #5f9f50;
+
+      .social-nav li{
+        float: left;
+        margin-left: 10px;
         }
-        header > ul li{
+      .social-nav li:first-child{
+        margin-left: 0;
+        }
+        .social-nav a{
+          display: block;
+          width: 22px;
+          height: 22px;
+          background: url(../icons_social.png) no-repeat;
+          text-indent: 100%;
+          white-space: nowrap;
+          overflow: hidden;
           }
-          header > ul li a{
-            text-decoration: none;
+        header .social-nav a.facebook{ background-position: 0 -22px; }
+        header .social-nav a.twitter{ background-position: -33px -22px; }
+        header .social-nav a.flickr{ background-position: -67px -22px; }
+        header .social-nav a.vimeo{ background-position: -102px -22px; }
+
+        footer .social-nav a.facebook{ background-position: 0 0; }
+        footer .social-nav a.twitter{ background-position: -33px 0; }
+        footer .social-nav a.flickr{ background-position: -67px 0; }
+        footer .social-nav a.vimeo{ background-position: -102px 0; }
+
+        .social-nav a.facebook:hover{ background-position: 0 -44px; }
+        .social-nav a.twitter:hover{ background-position: -33px -44px; }
+        .social-nav a.flickr:hover{ background-position: -67px -44px; }
+        .social-nav a.vimeo:hover{ background-position: -102px -44px; }
+
+      header .social-nav{
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        }
+      footer .social-nav{
+        }
+
+      header .main-nav{
+        float: right;
+        clear: right;
+        }
+        header .main-nav > ul{
+          margin-top: 0;
+          }
+          header .main-nav > ul > li{
+            float: left;
+            padding: 0;
+            margin: 0 0 0 30px;
+            position:  relative;
+            /*
+            width: 125px;
+            height: 114px;
+            border-top: solid 1px #5f9f50;
+            border-bottom: solid 1px #5f9f50;
+            */
             }
-          header > ul li a:hover{
-            text-decoration: underline;
+            header .main-nav > ul > li ul{
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 9px;
+              }
+            header .main-nav > ul > li:hover ul{
+              display: block;
+              }
+              header .main-nav > ul > li:hover ul li,
+              header .main-nav > ul > li:hover ul li a
+              {
+                display: block;
+                }
+                header .main-nav > ul a{
+                  font-size: 12px;
+                  line-height: 18px;
+                  text-decoration: none;
+                  }
+                header .main-nav > ul > li:hover > a,
+                header .main-nav > ul a.active,
+                header .main-nav > ul a:hover
+                {
+                  color: #4A9A52;
+                  color: #565961;
+                  /*text-decoration: underline;*/
+                  }
+
+    .footer-logos{
+      float: right;
+      }
+      .footer-logos ul{
+        margin:  0;
+        }
+        .footer-logos li{
+          float: left;
+          width: 125px;
+          margin-left: 30px;
+          text-align: center;
+          }
+          .footer-lgoos li:first-child{
+            margin-left: 0;
             }
 
 
     aside{
+      position: relative;
       float: left;
       clear: left;
       display: inline;
       width: 280px;
       width: 31%;
       padding: 0 20px;
-      background: url(bg_sidebar.png) 0 0 repeat;
+      background: url(../bg_sidebar.png) 0 0 repeat;
       }
     aside + aside{
       margin-top: 30px;
       }
+      aside .concave-corner{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background: #fef8ef;
+        }
+      aside .concave-corner:nth-of-type(1){
+        left: -12px; top: -12px;
+        }
+      aside .concave-corner:nth-of-type(2){
+        right: -12px; top: -12px;
+        }
+      aside .concave-corner:nth-of-type(3){
+        left: -12px; bottom: -12px;
+        }
+      aside .concave-corner:nth-of-type(4){
+        right: -12px; bottom: -12px;
+        }
 
     div[role="main"]{
       float: right;
@@ -211,6 +314,62 @@ body{
     min-height: 160px;
     padding-top: 30px;
     }
+
+    footer .newsletter{
+      float: left;
+      width: 280px;
+      margin-bottom: 0;
+      }
+    footer .newsletter form{
+      margin-bottom: 0;
+      }
+      footer .newsletter legend{
+        font: 100 14px/1.2 "open-sans",sans-serif;
+        color: #EEE6D0;
+        margin-bottom: 10px;
+        display: none;
+        }
+      footer .newsletter fieldset{
+        background: #eee6d0;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        }
+        footer .newsletter input{
+          float: left;
+          background: none transparent;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          height: 30px;
+          }
+        footer .newsletter input[type="email"]{
+          font: normal 12px/30px "open-sans",sans-serif;
+          width: 75%;
+          padding: 0 5px 0 10px;
+          color: #BDB5A0;
+          }
+
+        footer .newsletter input[type="submit"]{
+          font: 600 20px/30px "omnes-pro",sans-serif;
+          color: #91b24e;
+          width: 25%;
+          font-style: italic;
+          }
+        footer .newsletter input[type="submit"]:hover{
+          color: #565961;
+          }
+
+
+    footer .subfooter{
+      float: left;
+      clear: both;
+      padding: 20px 0 10px;
+      width: 100%;
+      text-align: center;
+      color: #98917e;
+      font-size: 12px;
+      line-height: 1;
+      }
 
 
 .map{ /* index */
@@ -237,7 +396,8 @@ section {
 
 
   section img,
-  #map_canvas /* show */
+  #map_canvas,
+  #flickr-pool-slideshow
   {
     float: right;
     width: 435px;
