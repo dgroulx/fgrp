@@ -5,6 +5,8 @@ class Park < ActiveRecord::Base
   has_many :amenities, through: :park_amenities
   has_many :links, class_name: "ParkLink"
 
+  accepts_nested_attributes_for :links
+
   validates :name, presence: true, uniqueness: true
   validates :address, :longitude, :latitude, presence: true
 

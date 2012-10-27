@@ -16,6 +16,7 @@ if Rails.env != "production"
 		{name: "Aberdeen Park", latitude: 43.0045, longitude: -85.6497, address: "Eastern at Evelyn NE Grand Rapids", flickr_pool: "1238780@N25"},
 		{name: "Highland Park", latitude: 42.9754, longitude: -85.657, address: "700 College NE Grand Rapids"},
 		])
+  aberdeen = Park.find_by_name("Aberdeen Park")
 
   Fact.destroy_all
   Fact.create([
@@ -26,4 +27,7 @@ if Rails.env != "production"
     {question: "Number of Basketball Courts", answer: "58"},
     {question: "Most Common Street Tree", answer: "Norway Maple"}
     ])
+
+  google = ParkLink.create(name: "Google", url: "http://www.google.com")
+  aberdeen.links << google
 end

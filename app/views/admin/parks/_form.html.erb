@@ -10,6 +10,13 @@
   <%= f.input :vimeo_embed %>
   <%= f.input :flickr_pool %>
   <%= f.association :amenities, as: :check_boxes %> 
-  
+  <%= link_to "Add Amenity", "#", id: "park_add_amenity" %>
+
+  Links 
+  <%= f.simple_fields_for :links do |ff| %>
+    <%= render partial: 'link', locals: {builder: ff}%>
+  <% end %>
+  <%= link_to "Add Link", "#", id: "park_add_link" %>
+
   <%= f.button :submit %>
 <% end %>
