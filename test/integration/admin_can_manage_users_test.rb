@@ -37,7 +37,7 @@ class AdminCanManageUsersTest < ActionDispatch::IntegrationTest
     visit admin_users_path
     within(:xpath, %Q{//td[text()="#{@user.email}"]/parent::tr}) do
       check 'admin'
-      sleep 0.1
+      sleep 0.1 # ajax call to set admin
     end
     
     @user.reload
@@ -53,12 +53,11 @@ class AdminCanManageUsersTest < ActionDispatch::IntegrationTest
 
   test 'user can change password' do
     sign_in(@user.email, 'password')
-    
     click_link @user.email
-  end
-
-  test "user can not change another user's password" do
-    sign_in(@admin.email, 'password')
-
+    fill_in "Password", with: "newpassword"
+    fill_in "Password confirmation", with: "newpassword"
+    click_button "Update User"
+    sign_in(@user.email, "newpassword")
+    assert page.has_content?("Dashboard"), "User's password was not updated"
   end
 end
