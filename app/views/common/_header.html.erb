@@ -1,25 +1,34 @@
     <header class="clearfix">
       <a class="logo hide-content" href="/">Friends of Grand Rapids Parks</a>
-      <ul>
-        <li><a href="#">Programs</a></li>
-        <li><a href="#">Current Projects</a></li>
-        <li><a href="#">Completed Projects</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Volunteer</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Donate</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Flickr</a></li>
-        <li><a href="#">Vimeo</a></li>
-      </ul>
+      <%= render partial: "common/socialnav" %>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="#">programs + projects</a>
+            <ul>
+              <li><a href="#">programs</a></li>
+              <li><a href="#">current projects</a></li>
+              <li><a href="#">completed projects</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">get involved</a>
+            <ul>
+              <li><a href="#">volunteer</a></li>
+              <li><a href="#">events</a></li>
+              <li><a href="#">donate</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">find a park</a>
+          </li>
+          <li>
+            <a href="#">about</a>
+            <ul>
+              <li><a href="#">blog</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>

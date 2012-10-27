@@ -13,7 +13,7 @@ $(document).ready(function() {
 		if (! (data instanceof Array)) {
 			data = [data];
 		}
-			
+
 		$.each(data, function(i, park) {
 			//console.log(park.name + ": " + park.latitude + ", " + park.longitude);
 			var marker = new google.maps.Marker({
@@ -30,7 +30,7 @@ $(document).ready(function() {
 		$canvas.data('markers', markers);
 		$('.parkCount').html(markers.length);
 	}
-	
+
 	var buildMap = function(lat, long, zoom, url) {
 		var mapOptions = {
 			center : new google.maps.LatLng(lat, long), // grand rapids lat/long
@@ -44,7 +44,7 @@ $(document).ready(function() {
 	};
 
 	$('select.amenities').chosen({no_results_text: "No results matched"}).change(function(e) {
-		var selected = $(this).val(); 
+		var selected = $(this).val();
 		if (selected && selected.length > 0) {
 			var resource = 'parks.json?';
 			$.each(selected, function(i) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 		}
 		$.getJSON(resource, refreshParkList);
 	});
-	
+
 	if ($("#park_slug").val()) {
 		var resource = '/parks/' + $("#park_slug").val()  + '.json';
 		var lat = $("#park_lat").val();
@@ -64,25 +64,14 @@ $(document).ready(function() {
 		buildMap(42.9633, -85.6681, 12, 'parks.json');
 	}
 
-  if ($('#flickr-pool-slideshow').length > 0) {
-    $('#flickr-pool-slideshow').each(function() {
-      var element = $(this);
-      var key = "40343c1f16327beb5c9adfd73caec372";
-      var group_id = element.data("flickr-group");
-      var api_method = "flickr.groups.pools.getPhotos&group_id=" + group_id;
+	prettify();
 
-      var callback = function(data) {
-        if (data.stat == "ok") {
-          var data = $.map(data.photos.photo, function(photo) {
-            return '<img src="http://farm' + photo.farm + '.static.flickr.com/' + photo.server +'/' + photo.id + '_' + photo.secret + '_m.jpg" />' 
-          });
-          console.log(data.join('')); 
-          element.html(data.join(''));
-          element.cycle();
-        }
-      }
-
-      $.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&api_key=" + key + "&method="+ api_method, callback);
-    });
-  }
 });
+
+
+
+function prettify(){
+  for(i=0;i<4;i++){
+    $('aside').append('<span class="concave-corner"></span>')
+  }
+}

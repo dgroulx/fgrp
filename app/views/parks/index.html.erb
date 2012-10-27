@@ -6,22 +6,6 @@
 
     <%= render partial: "common/header" %>
 
-    <aside>
-      <h1>explore the city</h1>
-      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
-
-      <hr/>
-
-      <h2>park facts</h2>
-      <dl>
-      <% @facts.each do |fact| %>
-        <dt><%= fact.question %></dt>
-        <dd><%= fact.answer %></dd>
-      <% end %>
-      </dl>  
-      <p><a href="#">learn more</a></p>
-
-    </aside>
     <div role="main">
 
       <h1>our parks</h1>
@@ -48,8 +32,8 @@
 
       </form>
 
-      <div class="map">
-        <div id="map_canvas" style="width:600px; height:600px"></div>
+      <div class="map clearfix">
+        <div id="map_canvas" style="width:590px; height:300px"></div>
       </div><!-- .map //-->
 
         All our parks:
