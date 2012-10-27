@@ -14,6 +14,10 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+
 # Transactional fixtures do not work with Selenium tests, because Capybara
 # uses a separate server thread, which the transactions would be hidden
 # from. We hence use DatabaseCleaner to truncate our test database.
@@ -27,7 +31,20 @@ class ActionDispatch::IntegrationTest
 
   # Stop ActiveRecord from wrapping tests in transactions
   self.use_transactional_fixtures = false
+  
+  # Authentication methods
+  def sign_in
+    admin = users(:admin)
+    visit admin_root_path
+    fill_in 'Email',  with: admin.email
+    fill_in 'Password', with: "password"
+    click_link_or_button('Sign in')
+  end 
 
+  def sign_out
+    click_link_or_button('Sign Out')   
+  end  
+  
   teardown do
     DatabaseCleaner.clean       # Truncate the database
     Capybara.reset_sessions!    # Forget the (simulated) browser state

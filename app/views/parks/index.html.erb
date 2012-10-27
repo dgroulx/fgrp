@@ -1,3 +1,6 @@
+<% content_for :page_title do %>
+  All your parks are belong to us
+<% end %>
 <div class="page-body clearfix">
   <div class="wrapper">
 
@@ -46,17 +49,25 @@
         </select>
 
         <!--
-        <ul>
-        <% @parks.each do |park| %>
-          <li><%= link_to park.name, park_path(park) %></li>
-        <% end %>
-        </ul>
+          All our parks:
+          <ul>
+          <% @parks.each do |park| %>
+            <li><%= link_to park.name, park_path(park) %></li>
+          <% end %>
+          </ul>
+
+          Filter by amenities:
+          <ul>
+          <% @amenities.each do |amenity| %>
+            <li><a class='amenity' href="#" id = "<%= amenity.id %>"><%= amenity.name %></li></a>
+          <% end %>
+          </ul>
          -->
 
       </form>
 
       <div class="map">
-        <%= image_tag("placeholder-map.png") %>
+        <div id="map_canvas" style="width:600px; height:600px"></div>
       </div><!-- .map //-->
     </div><!-- role="main" //-->
 
