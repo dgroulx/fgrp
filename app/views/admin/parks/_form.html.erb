@@ -1,14 +1,14 @@
+<p class="required_field">* Required Fields</p>
 <%= simple_form_for [:admin, @park] do |f| %>
   <%= f.input :name %>
-  <%= f.input :history %>
+  <%= f.input :address %>
   <%= f.input :latitude, as: :string %>
   <%= f.input :longitude, as: :string %>
-  <%= f.input :contact_info %>
   <%= f.input :park_size, as: :string %>
-  <%= f.input :address %>
+  <%= f.input :contact_info %>
+  <%= f.input :history %>
   <%= f.input :vimeo_embed %>
   <%= f.input :flicker_pool %>
-  <%= f.input :section %>
   <%= f.association :amenities, as: :check_boxes %> 
   
   <%= f.button :submit %>

@@ -2,3 +2,46 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+
+
+/* Admin interface styling */
+form{
+	width: 200px;
+	margin: 0 auto;
+}
+	.input {
+		float: left;
+	}
+
+	label, input, textarea, span{
+		float: left;
+		vertical-align: top;
+	}
+
+	input, textarea{
+		width: 275px;
+	}
+
+	textarea{
+		height: 50px;
+	}
+
+	.error {
+		color: #FF392B;
+	}
+
+	input{
+		display: block
+	}
+
+	label.checkbox{
+		width: 275px;
+		height: 25px;
+		line-height: 20px;
+		text-align: left;
+	}
+
+	input.check_boxes{
+		width: 25px;
+	}

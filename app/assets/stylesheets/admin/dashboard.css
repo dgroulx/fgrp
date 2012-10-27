@@ -2,3 +2,253 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/* Sitewide styling */
+@font-face {
+    font-family: 'open_sans_condensedbold';
+    src: url('../webfonts/opensans-condbold-webfont.eot');
+    src: url('../webfonts/opensans-condbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/opensans-condbold-webfont.woff') format('woff'),
+         url('../webfonts/opensans-condbold-webfont.ttf') format('truetype'),
+         url('../webfonts/opensans-condbold-webfont.svg#open_sans_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  }
+.hide-content{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  }
+form{
+  margin-bottom: 20px;
+  }
+
+ul{
+  padding-left: 0;
+  padding-right: 0;
+  }
+ul li{
+  padding: 0;
+  list-style: none;
+  }
+
+dl{
+  }
+  dt{
+    }
+  dd{
+    margin: 0 0 16px;
+    }
+
+dt,
+strong
+{
+  font-family: 'open_sans_condensedbold';
+  text-transform: uppercase;
+  font-weight: normal;
+  }
+
+a{
+	padding: 10px;
+	/* Round All */
+  }
+h1,h2,h3,h4,h5,h6{
+  font-family: "omnes-pro",sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #4a9a52;
+  }
+  h1{
+    font-size: 35px;
+    line-height:  38px;
+    }
+  aside h1,
+  h2
+  {
+    font-size: 20px;
+    line-height:  23px;
+    }
+
+
+
+
+
+
+
+
+body{
+  background: #FEF8EF;
+  color: #565961;
+  text-align: center;
+  font: normal 14px/23px "open-sans",sans-serif;
+  }
+  .page-body{
+    padding: 30px 0;
+    background: #fef8ef;
+    border-top: solid 5px #ceda51;
+    border-bottom: solid 5px #ceda51;
+    }
+    .wrapper{
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+      }
+    header{
+      padding-bottom: 30px;
+      }
+      header > *{
+        float: left;
+        margin-left: 30px;
+        height: 114px;
+        border-bottom: solid 1px #5f9f50;
+        }
+      header > *:first-child{
+        margin-left: 0;
+        }
+      .logo{
+        width: 280px;
+        width: 31%;
+        height: 114px;
+        background: url(../logo_fgrp.png) 50% 10px no-repeat;
+        }
+      header > ul{
+        width: 125px;
+        padding: 12px 0 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: solid 1px #5f9f50;
+        }
+        header > ul li{
+          }
+          header > ul li a{
+            text-decoration: none;
+            }
+          header > ul li a:hover{
+            text-decoration: underline;
+            }
+
+
+    aside{
+      float: left;
+      clear: left;
+      display: inline;
+      width: 280px;
+      width: 31%;
+      padding: 0 20px;
+      background: url(bg_sidebar.png) 0 0 repeat;
+      }
+    aside + aside{
+      margin-top: 30px;
+      }
+
+    div[role="main"]{
+      float: right;
+      width: 590px;
+      }
+
+  footer{
+    min-height: 160px;
+    padding-top: 30px;
+    }
+
+
+.map{ /* index */
+  padding: 10px 0;
+  border: solid #5f9f50;
+  border-width: 1px 0;
+  }
+
+section + section{
+  border-top: solid 5px #eee6d0;
+  margin-top: 30px;
+  }
+section:before,
+section:after {
+  content: " ";
+  display: table;
+  }
+section:after {
+  clear: both;
+  }
+section {
+  *zoom: 1;
+  }
+
+
+  section img,
+  #map_canvas /* show */
+  {
+    float: right;
+    width: 435px;
+    margin-left: 30px;
+  }
+  section ul li{
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+    }
+
+.section-amenities{
+  padding: 20px 0 20px 20px;
+  background: #eee6d0;
+  }
+  .section-amenities h2{
+    margin-top: 0;
+    }
+  .section-amenities ul{
+    margin-bottom: 0;
+    }
+
+.section-notice{
+  font-size: 12px;
+  line-height:  18px;
+  border-top: none;
+  }
+
+/* Custom Styling */
+a {
+		-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+  color: #91b24e;
+  background-color: #eeeeee;
+}
+
+a:hover{
+	background-color: #ffffff;
+}
+
+table{
+	text-align: left;
+	margin: 20px auto;
+}
+
+	table a{
+		background: none;
+		text-align: left;
+	}
+
+	table th{
+		padding: 0px 0px 0px 10px;
+	}
+
+p.required_field{
+	width: 200px;
+	font-size: 10px;
+	text-align: left;
+	margin: 10px auto 0px auto;
+}
+
+input.btn{
+	font-size: 1.5em;
+}
+
+.user_set_admin_checkbox{
+	width:10px;
+}

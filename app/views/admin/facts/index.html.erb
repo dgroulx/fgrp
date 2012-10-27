@@ -1,14 +1,14 @@
-Facts
+<h1 class="current_menu">Facts</h1>
 
-<%= link_to "New Fact", new_admin_fact_path %>
+<%= link_to "Add a New Fact", new_admin_fact_path %>
 
 <table>
   <tr>
     <th>Question</th>
     <th>Answer</th>
     <th></th>
-  </tr>>
-  <%= @facts.each do |fact| %>
+  </tr>
+  <% @facts.each do |fact| %>
   <tr>
     <td><%= fact.question %></td>
     <td><%= fact.answer %></td>

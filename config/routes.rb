@@ -8,10 +8,10 @@ Fgrp::Application.routes.draw do
     resources :amenities, except: [:show]
     resources :users, except: [:show]
     resources :facts, except: [:show]
-    root to: "dashboard#index"
+    root to: "parks#index"
   end
 
-  resources :parks, only: [:index, :show]
+  resources :parks, only: [:index, :show] 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

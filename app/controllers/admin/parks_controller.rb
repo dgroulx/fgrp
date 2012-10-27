@@ -22,6 +22,8 @@ class Admin::ParksController < Admin::AdminController
   def update
     if @park.update_attributes(params[:park])
       redirect_to admin_parks_path
+    else
+      render :edit
     end
   end
 
