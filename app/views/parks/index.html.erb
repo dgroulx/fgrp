@@ -6,6 +6,22 @@
 
     <%= render partial: "common/header" %>
 
+    <aside>
+      <h1>explore the city</h1>
+      <p>Grand Rapids has <%= @allParks.length %> city parks. See how many you can visit in a year!</p>
+
+      <hr/>
+
+      <h2>park facts</h2>
+      <dl>
+      <% @facts.each do |fact| %>
+        <dt><%= fact.question %></dt>
+        <dd><%= fact.answer %></dd>
+      <% end %>
+      </dl>  
+      <p><a href="#">learn more</a></p>
+
+    </aside>
     <div role="main">
 
       <h1>our parks</h1>
@@ -13,15 +29,28 @@
         Every park within the city is unique. Search the map below or check the directory to explore the details of your local park, or find a new park to visit.
       </p>
 
-      <form>
+      <form id="search-form">
 
-        <select class="amenities" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
+        <select class="amenities search-input" name="amenity_id" id="amenity_id" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
 			<% @amenities.each do |amenity| %>
 			  <option value="<%= amenity.id %>"><%= amenity.name %></option>
 			<% end %>
        </select>
-       
-       Number of matching parks: <span class="parkCount">0</span>
+
+	   <input class="distance-search" type="hidden" name="lat" id="lat" value="" />
+	   <input class="distance-search" type="hidden" name="lng" id="lng" value="" />
+	   <fieldset>
+	   <legend>find a park near me</legend>
+	   <label for="distance">Find parks within </label>
+	   <select class="distance-search search-input" name="distance" id="distance">
+           <option>1</option>
+		   <option selected="selected">5</option>
+		   <option>10</option>
+	   </select>
+	   <label for="address"> miles of </label>
+	   <input class="distance-search" type="textbox" name="address" id="address" placeholder="enter address or zip code" size="45" />
+       </fieldset>
+       Number of matching parks: <span class="parkCount"><%= @parks.length %></span>
 
         <!-- select>
           <option>Select park</option>
@@ -38,7 +67,7 @@
 
         All our parks:
         <ul>
-        <% @parks.each do |park| %>
+        <% @allParks.each do |park| %>
           <li><%= link_to park.name, park_path(park) %></li>
         <% end %>
         </ul>
@@ -47,7 +76,7 @@
     <aside>
 
       <h1>explore the city</h1>
-      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
+      <p>Grand Rapids has <%= @allParks.length %> city parks. See how many you can visit in a year!</p>
 
       <hr/>
 
