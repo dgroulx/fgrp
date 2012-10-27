@@ -1,8 +1,14 @@
-All our parks
-
+All our parks:
 <ul>
 <% @parks.each do |park| %>
   <li><%= link_to park.name, park_path(park) %></li>
+<% end %>
+</ul>
+
+Filter by amenities:
+<ul>
+<% @amenities.each do |amenity| %>
+  <li><a class='amenity' href="#" id = "<%= amenity.id %>"><%= amenity.name %></li></a>
 <% end %>
 </ul>
 

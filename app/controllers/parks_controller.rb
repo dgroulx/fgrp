@@ -1,5 +1,6 @@
 class ParksController < ApplicationController
   def index
+  @amenities = Amenity.all
   if params[:amenity_id].present?
     @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
   else 
@@ -23,11 +24,4 @@ class ParksController < ApplicationController
     end
   end
 
-  def find
-	@parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
-
-	respond_to do |format|
-      format.json { render json: @parks.to_json }
-    end
   end
-end
