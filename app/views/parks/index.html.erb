@@ -1,15 +1,71 @@
-All our parks:
-<ul>
-<% @parks.each do |park| %>
-  <li><%= link_to park.name, park_path(park) %></li>
+<% content_for :page_title do %>
+  All your parks are belong to us
 <% end %>
-</ul>
+<div class="page-body clearfix">
+  <div class="wrapper">
 
-Filter by amenities:
-<ul>
-<% @amenities.each do |amenity| %>
-  <li><a class='amenity' href="#" id = "<%= amenity.id %>"><%= amenity.name %></li></a>
-<% end %>
-</ul>
+    <%= render partial: "common/header" %>
 
-<div id="map_canvas" style="width:600px; height:600px"></div>
+    <aside>
+
+      <h1>explore the city</h1>
+      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
+
+      <hr/>
+
+      <h2>park facts</h2>
+      <dl>
+        <dt>Smallest city park</dt>
+          <dd>Sundial Park, 0.005 acres</dd>
+        <dt>largest city park</dt>
+          <dd>Aman Park, 331 acres</dd>
+        <dt>largest city park in city limits</dt>
+          <dd>Riverside Park, 180.95 acres</dd>
+        <dt>total city owned park acres</dt>
+          <dd>1,591 acres</dd>
+      </dl>
+      <p><a href="#">learn more</a></p>
+
+    </aside>
+
+    <div role="main">
+
+      <h1>our parks</h1>
+      <p>
+        Every park within the city is unique. Search the map below or check the directory to explore the details of your local park, or find a new park to visit.
+      </p>
+
+      <form>
+
+        <select>
+          <option>Search by amenity</option>
+        </select>
+
+        <select>
+          <option>Select park</option>
+          <% @parks.each do |park| %>
+            <option value="<%= park_path(park) %>"><%= park.name %></option>
+          <% end %>
+        </select>
+
+
+
+      </form>
+
+      <div class="map">
+        <div id="map_canvas" style="width:600px; height:600px"></div>
+      </div><!-- .map //-->
+
+        All our parks:
+        <ul>
+        <% @parks.each do |park| %>
+          <li><%= link_to park.name, park_path(park) %></li>
+        <% end %>
+        </ul>
+    </div><!-- role="main" //-->
+
+
+  </div><!-- .wrapper //-->
+</div><!-- .page-body //-->
+
+<%= render partial: "common/footer" %>

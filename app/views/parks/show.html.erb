@@ -1,21 +1,72 @@
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "parks" %>
 <% end %>
+<% content_for :page_title do %>
+  <%= @park.name %>
+<% end %>
 <%= hidden_field_tag :park_slug, @park.to_param %>
 <%= hidden_field_tag :park_lat, @park.latitude %>
 <%= hidden_field_tag :park_long, @park.longitude %>
-<%= @park.name %>
 
-Amenities:
-<ul>
-<% @park.amenities.each do |amenity| %>
-  <li><%= amenity.name %></li>
-<% end %>
-</ul>
+<div class="page-body clearfix">
+  <div class="wrapper">
 
-History:
-<%= @park.history %>
-<div id="map_canvas" style="width:300px; height:300px"></div>
-<% if @park.vimeo_embed.present? %>
-  <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-<% end %>
+    <%= render partial: "common/header" %>
+
+    <aside>
+
+      <h1>explore the city</h1>
+      <p>Grand Rapids has 72 city parks. See how many you can visit in a year!</p>
+
+      <hr/>
+
+      <h2>park facts</h2>
+      <dl>
+        <dt>Smallest city park</dt>
+          <dd>Sundial Park, 0.005 acres</dd>
+        <dt>largest city park</dt>
+          <dd>Aman Park, 331 acres</dd>
+        <dt>largest city park in city limits</dt>
+          <dd>Riverside Park, 180.95 acres</dd>
+        <dt>total city owned park acres</dt>
+          <dd>1,591 acres</dd>
+      </dl>
+      <p><a href="#">learn more</a></p>
+
+    </aside>
+
+    <div role="main">
+
+      <h1><%= @park.name %></h1>
+
+      <ul class="park-meta">
+        <li><strong><%= @park.address %></strong> <a href="#">view map</a></li>
+        <li><strong><%= @park.park_size %> Acres</strong></li>
+        <li><strong><%= @park.contact_info %></strong></li>
+      </ul>
+
+      <%= @park.history %>
+
+      <div class="amenities">
+        <h2>features and amenities</h2>
+        <ul class="clearfix">
+        <% @park.amenities.each do |amenity| %>
+          <li><strong><%= amenity.name %></strong> - descripton</li>
+        <% end %>
+        </ul>
+      </div><!-- .amenties //-->
+
+
+      <% if @park.vimeo_embed.present? %>
+        <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <% end %>
+
+      <div id="map_canvas" style="width:300px; height:300px"></div>
+
+    </div><!-- role="main" //-->
+
+
+  </div><!-- .wrapper //-->
+</div><!-- .page-body //-->
+
+<%= render partial: "common/footer" %>

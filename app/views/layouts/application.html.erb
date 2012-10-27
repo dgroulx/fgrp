@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "visitor" %>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDALMgsS5izTGiXpFgo_QAotGiW5VwEE_Y&sensor=false" %>
-  <%= yield :javascript_includes %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html class="no-js">
+  <head>
+    <title>Friends of Grand Rapids Parks | <%=yield :page_title %></title>
+    <%= stylesheet_link_tag "normalize.min" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+    <%= javascript_include_tag "visitor" %>
+    <%= javascript_include_tag "modernizr-2.6.1.min" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDALMgsS5izTGiXpFgo_QAotGiW5VwEE_Y&sensor=false" %>
+    <%= javascript_include_tag "http://use.typekit.net/uru2ozt.js" %>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </body>
 </html>
