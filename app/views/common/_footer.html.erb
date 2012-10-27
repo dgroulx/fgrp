@@ -1,6 +1,29 @@
 <footer>
   <div class="wrapper">
-      Footer stuff goes here
+
+    <div class="newsletter">
+      <form>
+        <legend>sign up for our newsletter</legend>
+        <fieldset>
+          <input type="email" placeholder="sign up for our newsletter">
+          <input type="submit" value="get it!">
+        </fieldset>
+      </form>
+      <%= render partial: "common/socialnav" %>
+    </div>
+
+    <nav class="footer-logos">
+      <ul>
+        <li><a href="#"><%= image_tag("logo_grufp.png") %></a></li>
+        <li><a href="#"><%= image_tag("logo_parksalive.png") %></a></li>
+        <li><a href="#"><%= image_tag("logo_greengala.png") %></a></li>
+        <li><a href="#"><%= image_tag("button_donate.png") %></a></li>
+      </ul>
+    </nav>
+
+    <div class="subfooter">
+      p.o. box 3199,  grand rapids, michigan 49501   &copy;2012 friends of grand rapids parks
+    </div>
+
   </div><!-- .wrapper //-->
 </footer>
-
