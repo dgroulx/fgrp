@@ -1,8 +1,9 @@
 All our parks
 
 <ul>
-	
 <% @parks.each do |park| %>
   <li><%= link_to park.name, park_path(park) %></li>
 <% end %>
 </ul>
+
+<div id="map_canvas" style="width:600px; height:600px"></div>
