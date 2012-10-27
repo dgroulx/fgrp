@@ -7,6 +7,8 @@ class Ability
     else
       can :manage, Amenity
       can :manage, Park
+      can :manage, ParkLink
+      can :manage, Fact
       can [:read, :update], User, id: user.id
     end
 
