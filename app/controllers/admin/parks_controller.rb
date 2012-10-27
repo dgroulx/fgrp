@@ -1,4 +1,7 @@
 class Admin::ParksController < Admin::AdminController
+  load_resource find_by: :slug
+  authorize_resource
+
   def index
     @parks = Park.all
   end

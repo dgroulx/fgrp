@@ -3,11 +3,12 @@ require 'test_helper.rb'
 class AdminCanAuthenticateTest < ActionDispatch::IntegrationTest
   def setup
     Capybara.reset_sessions!
+    @admin = users(:admin)
   end
 
   test 'admin can login and logout' do
-    sign_in
-    assert page.has_content?("Dashboard"), "Admin was unable to log in"
+    sign_in(@admin.email, 'password')
+    assert page.has_content?(@admin.email), "Admin was unable to log in"
     click_link "Sign Out"
     # Should get redirected to the sign in page
     assert page.has_content?("Sign in"), "Admin did not log out" 

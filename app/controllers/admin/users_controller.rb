@@ -1,4 +1,6 @@
 class Admin::UsersController < Admin::AdminController
+  load_and_authorize_resource
+
   def index
     @users = User.all
   end
@@ -12,6 +14,8 @@ class Admin::UsersController < Admin::AdminController
 
     if @user.save
       redirect_to admin_users_path
+    else
+      render 'new'
     end
   end
 
@@ -22,8 +26,11 @@ class Admin::UsersController < Admin::AdminController
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(params[:user])
-      redirect_to admin_users_path
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to admin_users_path }
+        format.json { render nothing: true }
+      end
     end
   end
 

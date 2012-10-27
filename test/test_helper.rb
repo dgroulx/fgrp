@@ -33,13 +33,12 @@ class ActionDispatch::IntegrationTest
   self.use_transactional_fixtures = false
   
   # Authentication methods
-  def sign_in
-    admin = users(:admin)
+  def sign_in(email, password)
     visit admin_root_path
-    fill_in 'Email',  with: admin.email
+    fill_in 'Email',  with: email
     fill_in 'Password', with: "password"
     click_link_or_button('Sign in')
-  end 
+  end
 
   def sign_out
     click_link_or_button('Sign Out')   

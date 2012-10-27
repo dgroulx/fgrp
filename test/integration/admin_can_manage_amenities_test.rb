@@ -1,10 +1,11 @@
 require 'test_helper'
 
 class AdminCanManageAmenitiesTest < ActionDispatch::IntegrationTest
-  fixtures :amenities
+  fixtures :amenities, :users
 
   def setup
-    sign_in
+    @admin = users(:admin)
+    sign_in(@admin.email, 'password')
   end
 
   test "admin can create a amenity" do
