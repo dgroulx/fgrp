@@ -31,18 +31,20 @@
 
       <form>
 
-        <select>
-          <option>Search by amenity</option>
-        </select>
+        <select class="amenities" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
+			<% @amenities.each do |amenity| %>
+			  <option value="<%= amenity.id %>"><%= amenity.name %></option>
+			<% end %>
+       </select>
+       
+       Number of matching parks: <span class="parkCount">0</span>
 
-        <select>
+        <!-- select>
           <option>Select park</option>
           <% @parks.each do |park| %>
             <option value="<%= park_path(park) %>"><%= park.name %></option>
           <% end %>
-        </select>
-
-
+        </select -->
 
       </form>
 
