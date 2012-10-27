@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AdminCanManageParks < ActionDispatch::IntegrationTest
-  fixtures :parks, :amenities, :park_amenities
+  fixtures :parks, :amenities, :park_amenities, :users
 
   ParkMock = Struct.new(:name, :history, :latitude, :longitude, :contact_info, 
                         :park_size, :address, :vimeo_embed, :flicker_pool, :section)
@@ -9,7 +9,8 @@ class AdminCanManageParks < ActionDispatch::IntegrationTest
   @@new_park.name = "Baldwin Park"
 
   def setup
-    sign_in
+    @admin = users(:admin)
+    sign_in(@admin.email, 'password')
   end
 
   test "admin can create a park" do

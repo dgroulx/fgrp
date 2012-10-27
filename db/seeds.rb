@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 if Rails.env != "production"
+  User.destroy_all
+  User.create(email: "admin@fgrp.org", password: "password", password_confirmation: "password", admin: true)
+  User.create(email: "user@fgrp.org", password: "password", password_confirmation: "password")
 
-	Park.destroy_all();
+	Park.destroy_all
 	Park.create([
 		{name: "Ah-Nab-Awen", latitude: 42.9683, longitude: -85.6767, address: "220 Front Ave NW Grand Rapids"},
 		{name: "Aberdeen Park", latitude: 43.0045, longitude: -85.6497, address: "Eastern at Evelyn NE Grand Rapids"},
