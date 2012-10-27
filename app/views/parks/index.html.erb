@@ -52,13 +52,6 @@
        </fieldset>
        Number of matching parks: <span class="parkCount"><%= @parks.length %></span>
 
-        <!-- select>
-          <option>Select park</option>
-          <% @parks.each do |park| %>
-            <option value="<%= park_path(park) %>"><%= park.name %></option>
-          <% end %>
-        </select -->
-
       </form>
 
       <div class="map clearfix">
@@ -72,30 +65,6 @@
         <% end %>
         </ul>
     </div><!-- role="main" //-->
-
-    <aside>
-
-      <h1>explore the city</h1>
-      <p>Grand Rapids has <%= @allParks.length %> city parks. See how many you can visit in a year!</p>
-
-      <hr/>
-
-      <h2>park facts</h2>
-      <dl>
-        <dt>Smallest city park</dt>
-          <dd>Sundial Park, 0.005 acres</dd>
-        <dt>largest city park</dt>
-          <dd>Aman Park, 331 acres</dd>
-        <dt>largest city park in city limits</dt>
-          <dd>Riverside Park, 180.95 acres</dd>
-        <dt>total city owned park acres</dt>
-          <dd>1,591 acres</dd>
-      </dl>
-      <p><a href="#">learn more</a></p>
-
-    </aside>
-
-
   </div><!-- .wrapper //-->
 </div><!-- .page-body //-->
 
