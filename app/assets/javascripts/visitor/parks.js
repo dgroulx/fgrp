@@ -31,9 +31,9 @@ $(document).ready(function() {
 		$('.parkCount').html(markers.length);
 	}
 	
-	var buildMap = function(lat, long, zoom, url) {
+	var buildMap = function(lat, lng, zoom, url) {
 		var mapOptions = {
-			center : new google.maps.LatLng(lat, long), // grand rapids lat/long
+			center : new google.maps.LatLng(lat, lng), 
 			zoom : zoom,
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
 			disableDefaultUI : true
@@ -60,7 +60,33 @@ $(document).ready(function() {
 		var lat = $("#park_lat").val();
 		var lng = $("#park_long").val();
 		buildMap(lat, lng, 15, resource);
+		
+		var treemapOptions = {
+			center : new google.maps.LatLng(lat, lng), 
+			zoom : 15,
+			mapTypeId : google.maps.MapTypeId.SATELLITE,
+			disableDefaultUI : true
+		};
+		var treemap = new google.maps.Map($('#treemap_canvas')[0], treemapOptions);
+		
+		 plotsLayer = new google.maps.KmlLayer('/plots.kml');
+		plotsLayer.setMap(treemap);
+		
+		
+		
+		// $.getJSON('/ufp.json?lat=' + lat + '&lng=' + lng, function(data) {
+			// $.each(data.geography.coordinates[0], function(i, coords) {
+				// console.log(coords);
+				// var marker = new google.maps.Marker({
+					// position : new google.maps.LatLng(coords[1], coords[0]),
+					// map : treemap,
+					// animation : google.maps.Animation.DROP
+				// });
+			// });
+		// });
+		
+		
 	} else {
-		buildMap(42.9633, -85.6681, 12, 'parks.json');
+		buildMap(42.9633, -85.6681, 12, 'parks.json');  // grand rapids lat/long
 	}
 });

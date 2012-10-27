@@ -13,6 +13,8 @@ Fgrp::Application.routes.draw do
 
   resources :parks, only: [:index, :show]
 
+  match "/ufp" => "parks#ufp"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

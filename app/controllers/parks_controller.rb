@@ -24,4 +24,12 @@ class ParksController < ApplicationController
       format.json { render json: @park.to_json }
     end
   end
+  
+  def ufp
+    uri = URI.parse("http://treemap.urbanforestproject.com/search/?lat=" + params[:lat] + "&lon=" + params[:lng])
+    response = Net::HTTP.get_response(uri)
+    respond_to do |format|
+      format.json { render json: response.body }
+    end
+  end
 end
