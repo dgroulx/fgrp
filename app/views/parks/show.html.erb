@@ -39,9 +39,9 @@
       <section class="section-links">
         <h2>park links</h2>
         <ul class="clearfix">
-          <li><a href="#">Lorem ipsum map link 1</a></li>
-          <li><a href="#">Lorem ipsum document link 2</a></li>
-          <li><a href="#">Lorem ipsum document link 3</a></li>
+        <% @park.links.each do |link| %>
+          <li><a href="<%= link.url %>"><%= link.name %></a></li>
+        <% end %>
         </ul>
       </section><!-- .section-links //-->
 
