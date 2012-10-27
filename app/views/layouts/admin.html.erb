@@ -2,13 +2,11 @@
 <html>
 <head>
   <title></title>
-  <%= stylesheet_link_tag    "admin/application", :media => "all" %>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
   <%= javascript_include_tag "admin" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= link_to "Dashboard", admin_root_path %>
   <%= link_to "Parks", admin_parks_path %>
   <%= link_to "Amenities", admin_amenities_path %>
   <%= link_to "Facts", admin_facts_path %>
