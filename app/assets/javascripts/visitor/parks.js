@@ -28,6 +28,7 @@ $(document).ready(function() {
 			markers.push(marker);
 		});
 		$canvas.data('markers', markers);
+		$('.parkCount').html(markers.length);
 	}
 
 	var buildMap = function(lat, long, zoom, url) {
@@ -42,9 +43,16 @@ $(document).ready(function() {
 		$.getJSON(url, refreshParkList);
 	};
 
-	$('a.amenity').on('click', function(event) {
-		event.preventDefault();
-		$.getJSON('parks.json?amenity_id=' + this.id, refreshParkList);
+	$('select.amenities').chosen({no_results_text: "No results matched"}).change(function(e) {
+		var selected = $(this).val();
+		if (selected && selected.length > 0) {
+			var resource = 'parks.json?';
+			$.each(selected, function(i) {
+				if (i > 0) resource += '&';
+				resource += 'amenity_id=' + this;
+			});
+		}
+		$.getJSON(resource, refreshParkList);
 	});
 
 	if ($("#park_slug").val()) {

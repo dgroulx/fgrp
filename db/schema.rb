@@ -11,10 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027054638) do
+ActiveRecord::Schema.define(:version => 20121027153056) do
 
   create_table "amenities", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "facts", :force => true do |t|
+    t.string   "question"
+    t.string   "answer"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -35,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20121027054638) do
     t.float    "park_size"
     t.text     "address"
     t.string   "vimeo_embed"
-    t.string   "flicker_pool"
+    t.string   "flickr_pool"
     t.string   "section"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

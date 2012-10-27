@@ -7,6 +7,7 @@ Fgrp::Application.routes.draw do
     resources :parks, except: [:show]
     resources :amenities, except: [:show]
     resources :users, except: [:show]
+    resources :facts, except: [:show]
     root to: "dashboard#index"
   end
 

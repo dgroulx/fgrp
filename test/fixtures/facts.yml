@@ -1,0 +1,24 @@
+largest_city_park:
+  question: Largest City Park
+  answer: Aman Park, 331 acers
+
+smallest_city_park:
+  question: Smallet City Park
+  answer: Sundial Park, 0.005 acers
+
+first_park_bond:
+  question: First Park Bond 
+  answer: 1911, adding 180 acers
+
+newest_playground:
+  question: Newest Playground
+  answer: Aberdeen Park
+
+number_of_basketball_courts:
+  question: Number of Basketball Courts
+  answer: 58
+
+most_common_street_tree:
+  question: Most Common Street Tree
+  answer: Norway Maple
+

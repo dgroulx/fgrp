@@ -61,11 +61,11 @@ textarea {
    ========================================================================== */
 @font-face {
     font-family: 'open_sans_condensedbold';
-    src: url('webfonts/opensans-condbold-webfont.eot');
-    src: url('webfonts/opensans-condbold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('webfonts/opensans-condbold-webfont.woff') format('woff'),
-         url('webfonts/opensans-condbold-webfont.ttf') format('truetype'),
-         url('webfonts/opensans-condbold-webfont.svg#open_sans_condensedbold') format('svg');
+    src: url('../webfonts/opensans-condbold-webfont.eot');
+    src: url('../webfonts/opensans-condbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/opensans-condbold-webfont.woff') format('woff'),
+         url('../webfonts/opensans-condbold-webfont.ttf') format('truetype'),
+         url('../webfonts/opensans-condbold-webfont.svg#open_sans_condensedbold') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -279,7 +279,7 @@ body{
       width: 280px;
       width: 31%;
       padding: 0 20px;
-      background: url(bg_sidebar.png) 0 0 repeat;
+      background: url(../bg_sidebar.png) 0 0 repeat;
       }
     aside + aside{
       margin-top: 30px;
@@ -396,7 +396,8 @@ section {
 
 
   section img,
-  #map_canvas /* show */
+  #map_canvas,
+  #flickr-pool-slideshow
   {
     float: right;
     width: 435px;
