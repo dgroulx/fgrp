@@ -11,7 +11,11 @@
   <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
-    <td><%= check_box_tag "admin", "admin", user.admin?, {class: "user_set_admin_checkbox", data: {id: user.id}} %></td>
+    <td>
+      <% if can? :manage, User %>
+        <%= check_box_tag "admin", "admin", user.admin?, {class: "user_set_admin_checkbox", data: {id: user.id}} %>
+      <% end %>
+    </td>
     <td><%= link_to "Delete", [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>

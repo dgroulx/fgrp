@@ -1,4 +1,4 @@
-Edit User <%= @user.email %>
+<h1 class="current_menu">Edit User <%= @user.email %></h1>
 
 <%= simple_form_for [:admin, @user] do |f| %>
   <%= f.input :password %>
