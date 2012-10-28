@@ -40,23 +40,22 @@
 	   <input class="distance-search" type="hidden" name="lat" id="lat" value="" />
 	   <input class="distance-search" type="hidden" name="lng" id="lng" value="" />
 	   <fieldset>
-	   <legend>find a park near me</legend>
-	   <label for="distance">Find parks within </label>
-	   <select class="distance-search search-input" name="distance" id="distance">
-           <option>1</option>
-		   <option selected="selected">5</option>
-		   <option>10</option>
-	   </select>
-	   <label for="address"> miles of </label>
-	   <input class="distance-search" type="textbox" name="address" id="address" placeholder="enter address or zip code" size="45" />
+		   <label for="distance">Find parks within </label>
+		   <select class="distance-search search-input" name="distance" id="distance">
+	           <option>1</option>
+			   <option selected="selected">5</option>
+			   <option>10</option>
+		   </select>
+		   <label for="address"> miles of </label>
+		   <input class="distance-search" type="textbox" name="address" id="address" placeholder="enter address or zip code" size="45" />
        </fieldset>
        Number of matching parks: <span class="parkCount"><%= @parks.length %></span>
 
       </form>
 
       <div class="map clearfix">
-        <div id="map_canvas" style="width:590px; height:300px"></div>
-      </div><!-- .map //-->
+        <div id="map_canvas" style="width:590px; height:500px"></div>
+      </div>
 
         All our parks:
         <ul>
