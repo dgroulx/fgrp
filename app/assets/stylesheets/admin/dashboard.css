@@ -31,6 +31,7 @@
     width: 280px;
     width: 31%;
     height: 104px;
+    padding: 0px;
     background: url(../logo_fgrp.png) 50% 0 no-repeat;
     /* border-bottom: solid 1px #5f9f50; */
 }
@@ -120,12 +121,7 @@ body{
       header > *:first-child{
         margin-left: 0;
         }
-      .logo{
-        width: 280px;
-        width: 31%;
-        height: 114px;
-        background: url(../logo_fgrp.png) 50% 10px no-repeat;
-        }
+
       header > ul{
         width: 125px;
         padding: 12px 0 0;
@@ -166,6 +162,7 @@ body{
     padding-top: 30px;
     }
 
+.clear {clear: both;}
 
 .map{ /* index */
   padding: 10px 0;
@@ -264,6 +261,11 @@ input.btn{
 
 /* ----- SimpleForm Styles ----- */
 
+.simple_form {
+  margin: 0px auto;
+  width: 50%;
+}
+
 .simple_form div.input {
   margin-bottom: 10px;
   clear: both; /* Required for Webkit, but not for Gecko */
@@ -326,3 +328,21 @@ label.collection_check_boxes {
   vertical-align: -2px;
   margin-left: 2px;
 }
+
+.checkbox{
+  vertical-align: middle;
+}
+
+.checkbox input{
+  width: auto;
+  margin-right: 2px;
+}
+
+.form-actions{
+  clear: both;
+}
+
+.form-actions input {
+  width: auto;
+}
+
