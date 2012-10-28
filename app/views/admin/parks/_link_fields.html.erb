@@ -1,3 +1,6 @@
-<%= builder.input :name %>
-<%= builder.input :url %>
-<%= link_to "Delete", "#" %>
+<fieldset>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove", "#", class: "remove_fields" %>
+</fieldset>

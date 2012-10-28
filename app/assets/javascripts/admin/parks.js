@@ -1,12 +1,15 @@
-function remove_fields(link) {  
-  $(link).previous("input[type=hidden]").value = "1";  
-  $(link).up(".fields").hide();  
-} 
+$(document).ready( function() {
+  $('form').on('click', '.remove_fields', function(event) {
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('fieldset').hide();
+    event.preventDefault();
+  });
 
-function add_fields(link, association, content) {  
-  var new_id = new Date().getTime();  
-  var regexp = new RegExp("new_" + association, "g");  
-  $(link).up().insert({  
-    before: content.replace(regexp, new_id)  
-  });  
-}
+  $('form').on('click', '.add_fields', function(event) {
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    event.preventDefault();
+  });
+});
+

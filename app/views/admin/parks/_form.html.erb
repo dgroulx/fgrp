@@ -9,14 +9,18 @@
   <%= f.input :history %>
   <%= f.input :vimeo_embed %>
   <%= f.input :flickr_pool %>
-  <%= f.association :amenities, as: :check_boxes %> 
-  <%= link_to "Add Amenity", "#", id: "park_add_amenity" %>
 
-  Links 
-  <%= f.simple_fields_for :links do |ff| %>
-    <%= render partial: 'link', locals: {builder: ff}%>
+  Amenities
+  <%= f.simple_fields_for :park_amenities do |builder| %>
+    <%= render "park_amenity_fields", f: builder %>
   <% end %>
-  <%= link_to "Add Link", "#", id: "park_add_link" %>
+  <%= link_to_add_fields "Add Amenity", f, :park_amenities %>
+
+  Links
+  <%= f.simple_fields_for :links do |builder| %>
+    <%= render "link_fields", f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Link", f, :links %>
 
   <%= f.button :submit %>
 <% end %>
