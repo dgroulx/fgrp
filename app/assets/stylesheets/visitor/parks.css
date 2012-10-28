@@ -199,6 +199,18 @@ body{
         .social-nav a.flickr:hover{ background-position: -67px -44px; }
         .social-nav a.vimeo:hover{ background-position: -102px -44px; }
 
+        .social-nav a:hover{
+/*          rotation-point: 50% 50%;
+          rotation: 45deg;
+          transform:rotate(10deg);
+          -ms-transform:rotate(10deg); /* IE 9 */
+          -moz-transform:rotate(10deg); /* Firefox */
+          -webkit-transform:rotate(10deg); /* Safari and Chrome */
+          -o-transform:rotate(10deg); /* Opera */
+*/          }
+
+
+
       header .social-nav{
         position: absolute;
         right: 0;
@@ -269,12 +281,21 @@ body{
           .footer-lgoos li:first-child{
             margin-left: 0;
             }
-          .footer-lgoos li a{
+          .footer-logos li a{
             display: block;
             transition: all 333ms ease 0s;
             -moz-transition: all 333ms ease 0s;
             -webkit-transition: all 333ms ease 0s;
             -o-transition: all 333ms ease 0s;
+            }
+          .footer-logos li a:hover{
+            rotation-point: 50% 50%;
+            rotation: 45deg;
+            transform:rotate(10deg);
+            -ms-transform:rotate(10deg); /* IE 9 */
+            -moz-transform:rotate(10deg); /* Firefox */
+            -webkit-transform:rotate(10deg); /* Safari and Chrome */
+            -o-transform:rotate(10deg); /* Opera */
             }
 
     aside{
