@@ -31,7 +31,7 @@
 
       <form id="search-form">
 
-        <select class="amenities search-input" name="amenity_id" id="amenity_id" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
+        <select class="amenities search-input" name="amenity_id[]" id="amenity_id" data-placeholder="Filter by one or more amenities" style="width:350px;" multiple="" >
 			<% @amenities.each do |amenity| %>
 			  <option value="<%= amenity.id %>"><%= amenity.name %></option>
 			<% end %>
