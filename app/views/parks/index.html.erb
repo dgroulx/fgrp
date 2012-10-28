@@ -42,9 +42,9 @@
 	   <fieldset>
 		   <label for="distance">Find parks within </label>
 		   <select class="distance-search search-input" name="distance" id="distance">
-	           <option>1</option>
-			   <option selected="selected">5</option>
-			   <option>10</option>
+	       <% (1..20).each do |i| %>
+            <option><%=i%></option>
+         <%end%>
 		   </select>
 		   <label for="address"> miles of </label>
 		   <input class="distance-search" type="textbox" name="address" id="address" placeholder="enter address or zip code" size="45" />
