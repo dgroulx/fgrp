@@ -1,0 +1,6 @@
+        All our parks:
+        <ul>
+        <% @allParks.each do |park| %>
+          <li><%= link_to park.name, park_path(park) %></li>
+        <% end %>
+        </ul>
