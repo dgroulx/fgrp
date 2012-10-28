@@ -93,7 +93,7 @@ $(function() {
 	$('.filterReset').on('click', function(e) {
 		e.preventDefault();
 		$('#address').val('');
-		$("#amenity_id").val([]).change(); 
+		$("#amenity_id").val([]).change().trigger("liszt:updated"); 
 		$canvas.trigger('init');
 	});
 

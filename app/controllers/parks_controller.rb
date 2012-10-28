@@ -3,7 +3,7 @@ class ParksController < ApplicationController
     @amenities = Amenity.all
   	@allParks = Park.all
     if params[:amenity_id].present?
-      @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
+      @parks = Park.joins(:amenities).where("amenities.id IN (?)", params[:amenity_id])
     else 
       @parks = @allParks
     end
