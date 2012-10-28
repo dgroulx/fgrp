@@ -6,11 +6,16 @@
   <%= f.input :latitude, as: :string %>
   <%= f.input :longitude, as: :string %>
   <%= f.input :park_size, as: :string %>
-  <%= f.input :contact_info %>
   <%= f.input :history %>
   <%= f.input :vimeo_embed %>
   <%= f.input :flickr_pool %>
-  <%= f.input :contact_email %>
+
+  <fieldset>
+    <legend>Parks Alive</legend>
+    <%= f.input :is_parks_alive, label: "Parks Alive Enabled?" %>
+    <%= f.input :parks_alive_contact %>
+    <%= f.input :parks_alive_content, label: "Sidebar Content (Markdown enabled)" %>
+  </fieldset>
 
   Amenities
   <%= f.simple_fields_for :park_amenities do |builder| %>

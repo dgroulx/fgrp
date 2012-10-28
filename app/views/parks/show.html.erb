@@ -24,9 +24,6 @@
         <% if @park.park_size.present? %>
           <li>Size: <strong><%= @park.park_size %> Acres</strong></li>
         <% end %>
-        <% if @park.contact_info.present? %>
-          <li>Contact: <strong><%= raw @park.contact_info %></strong></li>
-        <% end %>
       </ul>
 
       <section class="section-history">
@@ -102,19 +99,25 @@
 
     </aside>
 
-    <aside>
+    <% if @park.is_parks_alive? %>
+      <aside>
       <h2>parks alive</h2>
-      <p>A venture to reclaim and sustain parks.</p>
-      <% if @park.contact_email.present? %>
-        <p><strong>park contact</strong><a href="mailto:#"><%= @park.contact_email %></a></p>
+        <p>A venture to reclaim and sustain parks.</p>
+      <% if @park.parks_alive_contact.present? %>
+        <% if @park.parks_alive_contact.present? %>
+          <p><strong>park contact</strong><a href="mailto:#"><%= @park.parks_alive_contact %></a></p>
+          <%= render_markdown(@park.parks_alive_content) %>
+        <% end %>
+      <% else %>
+        <p>
+        Sign up to be a Parks Alive leader for this park!<br />
+          <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveReportCard.pdf">Submit a Parks Alive report card</a><br>
+          <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveLeadersAgreement.pdf">Download the guidelines</a> (pdf)<br>
+          <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveLeadersHandbook.pdf">Download the handbook</a> (pdf)
+          </p>
       <% end %>
-      <p>
-        <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveReportCard.pdf">Submit a Parks Alive report card</a><br>
-        <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveLeadersAgreement.pdf">Download the guidelines</a> (pdf)<br>
-        <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveLeadersHandbook.pdf">Download the handbook</a> (pdf)
-      </p>
-    </aside>
-
+      </aside>
+    <% end %>
   </div><!-- .wrapper //-->
 </div><!-- .page-body //-->
 
