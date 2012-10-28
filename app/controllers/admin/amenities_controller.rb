@@ -10,6 +10,8 @@ class Admin::AmenitiesController < Admin::AdminController
   def create
     if @amenity.save
       redirect_to admin_amenities_path
+    else
+      render 'new'
     end
   end
 
@@ -19,6 +21,8 @@ class Admin::AmenitiesController < Admin::AdminController
   def update
     if @amenity.update_attributes(params[:amenity])
       redirect_to admin_amenities_path
+    else
+      render 'edit'
     end
   end
 

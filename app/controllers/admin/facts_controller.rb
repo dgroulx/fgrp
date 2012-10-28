@@ -10,6 +10,8 @@ class Admin::FactsController < Admin::AdminController
   def create
     if @fact.save
       redirect_to admin_facts_path
+    else
+      render 'new'
     end
   end
 
@@ -19,6 +21,8 @@ class Admin::FactsController < Admin::AdminController
   def update
     if @fact.update_attributes(params[:fact])
       redirect_to admin_facts_path
+    else
+      render 'edit'
     end
   end
 

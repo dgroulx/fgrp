@@ -8,7 +8,7 @@
   <% @parks.each do |park| %>
   <tr>
     <td><%= link_to park.name, edit_admin_park_path(park) %></td>
-    <td><%= link_to "Delete", [:admin, park], method: :delete %></td>
+    <td><%= link_to "Delete", [:admin, park], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>    
   <% end %>
 </table>

@@ -12,7 +12,7 @@
   <tr>
     <td><%= fact.question %></td>
     <td><%= fact.answer %></td>
-    <td><%= link_to "Edit", edit_admin_fact_path(fact) %>|<%= link_to "Delete", [:admin, fact], method: :delete %></td>
+    <td><%= link_to "Edit", edit_admin_fact_path(fact) %>|<%= link_to "Delete", [:admin, fact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
 </table>
