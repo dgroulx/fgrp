@@ -15,7 +15,7 @@ class Park < ActiveRecord::Base
                        numericality: {greater_than_or_equal_to: -89.9999, less_than_or_equal_to: 89.9999}
 
   validates :longitude, presence: true,
-                        numericality: {greater_than_or_equal_to: 180, less_than_or_equal_to: 180}
+                        numericality: {greater_than_or_equal_to: -180, less_than_or_equal_to: 180}
 
   before_create :generate_slug
   before_save :generate_slug
