@@ -19,13 +19,13 @@
 
       <ul class="park-meta">
         <% if @park.address.present? %>
-          <li><strong><%= @park.address %></strong> <a href="#">view map</a></li>
+          <li><strong><%= @park.address %></strong> <a href="#mapAnchor">View Map</a></li>
         <% end %>
         <% if @park.park_size.present? %>
-          <li><strong><%= @park.park_size %> Acres</strong></li>
+          <li>Size: <strong><%= @park.park_size %> Acres</strong></li>
         <% end %>
         <% if @park.contact_info.present? %>
-          <li><strong><%= raw @park.contact_info %></strong></li>
+          <li>Contact: <strong><%= raw @park.contact_info %></strong></li>
         <% end %>
       </ul>
 
@@ -37,8 +37,12 @@
       <section class="section-amenities">
         <h2>features and amenities</h2>
         <ul class="clearfix">
-        <% @park.amenities.each do |amenity| %>
-          <li><strong><%= amenity.name %></strong> - descripton</li>
+        <% @park.park_amenities.each do |amenity| %>
+          <li><strong><%= amenity.amenity.name %></strong> 
+          	<% if amenity.description.present? %>
+          		- <%= raw amenity.description %>
+          	<% end %>
+          </li>
         <% end %>
         </ul>
       </section><!-- .section-amenties //-->
@@ -63,12 +67,14 @@
       </section><!-- .section-photos //-->
       <% end %>
 
-
       <% if @park.vimeo_embed.present? %>
-        <iframe src="http://player.vimeo.com/video/<%= @park.vimeo_embed %>" width="320" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	    <section class="section-video  ui-helper-clearfix">
+	    <h2>video</h2>
+		<%= raw @park.vimeo_embed %>
+      	</section>
       <% end %>
 
-      <section class="section-map">
+      <section id="mapAnchor" class="section-map ui-helper-clearfix">
         <div id="map_canvas" style="width:435px; height:300px"></div>
         <h2>map</h2>
         <p>Explore this park and <a href="http://treemap.urbanforestproject.com/howto/">add a tree to our Tree Map.</a></p>

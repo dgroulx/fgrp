@@ -109,13 +109,16 @@ $(function() {
 		var callback = function(data) {
 			if (data.stat == "ok") {
 				var data = $.map(data.photos.photo, function(photo) {
-					return '<img src="http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg" />'
+					if (photo.url_n) {
+						return '<img src="' + photo.url_n + '" height="' + photo.height_n + '" width="' + photo.width_n +'" />';
+					}
+					return '<img src="' + photo.url_s + '" height="' + photo.height_s + '" width="' + photo.width_s +'" />';
 				});
 				element.html(data.join(''));
 				element.cycle();
 			}
 		}
 
-		$.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&api_key=" + key + "&method=" + api_method, callback);
+		$.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&extras=url_n,url_s&api_key=" + key + "&method=" + api_method, callback);
 	});
 });
