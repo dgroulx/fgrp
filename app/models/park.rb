@@ -1,5 +1,5 @@
 class Park < ActiveRecord::Base
-  attr_accessible :id, :address, :flickr_pool, :history, :latitude, :longitude, :name, :park_size, :vimeo_embed, :amenity_ids, :slug, :links_attributes, :park_amenities_attributes, :contact_email, :is_parks_alive, :parks_alive_contact, :parks_alive_content
+  attr_accessible :id, :address, :flickr_pool, :history, :latitude, :longitude, :name, :park_size, :vimeo_embed, :amenity_ids, :slug, :links_attributes, :park_amenities_attributes, :is_parks_alive, :parks_alive_contact, :parks_alive_content
 
   default_scope order('name ASC')
 

@@ -108,7 +108,7 @@
         <p>A venture to reclaim and sustain parks.</p>
       <% if @park.parks_alive_contact.present? %>
         <% if @park.parks_alive_contact.present? %>
-          <p><strong>park contact</strong><a href="mailto:#"><%= @park.parks_alive_contact %></a></p>
+          <p>Park Contact: <%= @park.parks_alive_contact %></p>
           <%= render_markdown(@park.parks_alive_content) %>
         <% end %>
       <% else %>
