@@ -269,7 +269,13 @@ body{
           .footer-lgoos li:first-child{
             margin-left: 0;
             }
-
+          .footer-lgoos li a{
+            display: block;
+            transition: all 333ms ease 0s;
+            -moz-transition: all 333ms ease 0s;
+            -webkit-transition: all 333ms ease 0s;
+            -o-transition: all 333ms ease 0s;
+            }
 
     aside{
       position: relative;
