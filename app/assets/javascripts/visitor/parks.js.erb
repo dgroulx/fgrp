@@ -1,6 +1,9 @@
 $(function() {
 
-	var map, markers = [], $canvas = $('#map_canvas');
+	var map, markers = [], $canvas = $('#map_canvas').on('init', function() {
+		// build map for all parks in Grand Rapids
+		buildMap(42.9633, -85.6681, 12, '/parks.json');
+	});
 
 	var shadow = new google.maps.MarkerImage('/parkshadow.png',
       new google.maps.Size(59, 32),
@@ -40,7 +43,10 @@ $(function() {
 			center : new google.maps.LatLng(lat, long), 
 			zoom : zoom,
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
-			disableDefaultUI : true
+			disableDefaultUI : true,
+			zoomControl: true,
+			panControl: true,
+			mapTypeControl: true
 		};
 		map = new google.maps.Map($canvas[0], mapOptions);
 		$.getJSON(url, refreshParkList);
@@ -87,9 +93,8 @@ $(function() {
 	$('.filterReset').on('click', function(e) {
 		e.preventDefault();
 		$('#address').val('');
-		$("#amenity_id").val([]); 
-		amenitySearch.trigger("liszt:updated");
-		$('.search-input').trigger('change');
+		$("#amenity_id").val([]).change(); 
+		$canvas.trigger('init');
 	});
 
 	// build and populate the map
@@ -100,8 +105,7 @@ $(function() {
 		var lng = $("#park_long").val();
 		buildMap(lat, lng, 15, resource);
 	} else {
-		// build map for all parks in Grand Rapids
-		buildMap(42.9633, -85.6681, 12, '/parks.json');
+		$canvas.trigger('init');
 	}
 
 	// set up flickr slideshow

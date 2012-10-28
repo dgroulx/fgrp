@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 module ApplicationHelper
   def link_to_add_fields(name, f, association)
     new_object = f.object.send(association).klass.new
@@ -6,5 +8,9 @@ module ApplicationHelper
       render(association.to_s.singularize + "_fields", f: builder)
     end
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
+  end
+
+  def render_markdown(content)
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(content).html_safe
   end
 end
