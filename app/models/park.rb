@@ -1,5 +1,5 @@
 class Park < ActiveRecord::Base
-  attr_accessible :id, :address, :contact_info, :flickr_pool, :history, :latitude, :longitude, :name, :park_size, :vimeo_embed, :amenity_ids, :slug, :links_attributes, :park_amenities_attributes
+  attr_accessible :id, :address, :contact_info, :flickr_pool, :history, :latitude, :longitude, :name, :park_size, :vimeo_embed, :amenity_ids, :slug, :links_attributes, :park_amenities_attributes, :contact_email
 
   has_many :park_amenities, dependent: :destroy
   has_many :amenities, through: :park_amenities

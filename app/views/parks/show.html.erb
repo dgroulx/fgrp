@@ -105,7 +105,9 @@
     <aside>
       <h2>parks alive</h2>
       <p>A venture to reclaim and sustain parks.</p>
-      <p><strong>park contact</strong> <a href="mailto:#">First Last</a></p>
+      <% if @park.contact_email.present? %>
+        <p><strong>park contact</strong><a href="mailto:#"><%= @park.contact_email %></a></p>
+      <% end %>
       <p>
         <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveReportCard.pdf">Submit a Parks Alive report card</a><br>
         <a href="http://www.friendsofgrparks.org/resources/Documents/ParksAliveLeadersAgreement.pdf">Download the guidelines</a> (pdf)<br>
