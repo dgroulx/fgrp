@@ -1,7 +1,7 @@
 class ParksController < ApplicationController
   def index
     @amenities = Amenity.all
-	@allParks = Park.order("name ASC").all
+	@allParks = Park.all
     if params[:amenity_id].present?
       @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
     else 
