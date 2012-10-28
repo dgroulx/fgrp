@@ -1,9 +1,21 @@
         All our parks:
-        <ul>
+        <ul class="park-list clearfix">
         <% @allParks.each do |park| %>
-          <li>
+          <li class="<%= cycle("col1", "col2", "col3") %>">
             <%= link_to park_path(park) do %>
-              <%= park.name %>
+              <span><%= park.name %></span>
+
+              <% if park.amenities.present? %>
+                <ul>
+                <%park.park_amenities.first(3).each do |amenity, index| %>
+                  <li><%= amenity.amenity.name %></li>
+                <% end %>
+                <% if park.park_amenities.length > 3 %>
+                  <li>More...</li>
+                <% end %>
+                </ul>
+              <% end %>
+
             <% end %>
           </li>
         <% end %>

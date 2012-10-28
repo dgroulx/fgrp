@@ -429,6 +429,38 @@ section {
 
 
 
+.park-list a{
+  display: block;
+  transition: all 333ms ease 0s;
+  -moz-transition: all 333ms ease 0s;
+  -webkit-transition: all 333ms ease 0s;
+  -o-transition: all 333ms ease 0s;
+  text-decoration: none;
+  color: #565961;
+  }
+.park-list a:hover{
+  color: #565961;
+  background: rgba(0,0,0,0.2)
+  }
+  .park-list a span{
+    display: block;
+    color: #91b24e;
+    text-decoration: underline;
+    }
+  .park-list a:hover span{
+    color: #565961;
+    text-decoration: none;
+    }
+  .park-list > li{
+    float: left;
+    width: 33%;
+    }
+  .park-list > li.col1{
+    clear: left;
+    }
+    .park-list a{
+      padding: 5px;
+      }
 
 
 
