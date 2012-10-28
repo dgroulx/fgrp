@@ -101,7 +101,7 @@ $(function() {
 	// set up flickr slideshow
 	$('#flickr-pool-slideshow').each(function() {
 		var element = $(this);
-		var key = "40343c1f16327beb5c9adfd73caec372";
+		var key = "<%= CONFIG[:flickr_api_key] %>";
 		// david_groulx@me.com's flicker key, need to get a new one
 		var group_id = element.data("flickr-group");
 		var api_method = "flickr.groups.pools.getPhotos&group_id=" + group_id;
