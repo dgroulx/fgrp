@@ -2,7 +2,11 @@ Fgrp::Application.routes.draw do
   scope '/admin' do
     devise_for :users
   end
-  
+
+  devise_scope :user do 
+    match '/admin' => "devise/sessions#new"
+  end 
+
   namespace :admin do
     resources :parks, except: [:show]
     resources :amenities, except: [:show]
