@@ -2,6 +2,11 @@ $(function() {
 
 	var map, markers = [], $canvas = $('#map_canvas');
 
+	var shadow = new google.maps.MarkerImage('/parkshadow.png',
+      new google.maps.Size(59, 32),
+      new google.maps.Point(0,0),
+      new google.maps.Point(12, 32));
+
 	var refreshParkList = function(data) {
 		var existingMarkers = $canvas.data('markers');
 		while (existingMarkers && existingMarkers.length > 0) {
@@ -17,7 +22,9 @@ $(function() {
 				position : new google.maps.LatLng(park.latitude, park.longitude),
 				map : map,
 				animation : google.maps.Animation.DROP,
-				title : park.name
+				title : park.name,
+				icon : '/park.png',
+				shadow : shadow
 			});
 			google.maps.event.addListener(marker, 'click', function() {
 				location.href = "/parks/" + park.slug;
@@ -36,7 +43,6 @@ $(function() {
 			disableDefaultUI : true
 		};
 		map = new google.maps.Map($canvas[0], mapOptions);
-
 		$.getJSON(url, refreshParkList);
 	};
 	
