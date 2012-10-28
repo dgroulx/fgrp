@@ -25,6 +25,15 @@
   white-space: nowrap;
   overflow: hidden;
   }
+  
+  .logo{
+    float: left;
+    width: 280px;
+    width: 31%;
+    height: 104px;
+    background: url(../logo_fgrp.png) 50% 0 no-repeat;
+    /* border-bottom: solid 1px #5f9f50; */
+}
 form{
   margin-bottom: 20px;
   }
