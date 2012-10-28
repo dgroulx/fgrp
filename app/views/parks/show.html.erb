@@ -2,7 +2,7 @@
   <%= javascript_include_tag "parks" %>
 <% end %>
 <% content_for :page_title do %>
-  <%= @park.name %>
+  | <%= @park.name %>
 <% end %>
 <%= hidden_field_tag :park_slug, @park.to_param %>
 <%= hidden_field_tag :park_lat, @park.latitude %>
@@ -35,7 +35,7 @@
         <h2>features and amenities</h2>
         <ul class="clearfix">
         <% @park.park_amenities.each do |amenity| %>
-          <li><strong><%= amenity.amenity.name %></strong> 
+          <li><strong><%= amenity.amenity.name %></strong>
           	<% if amenity.description.present? %>
           		- <%= raw amenity.description %>
           	<% end %>
@@ -87,7 +87,7 @@
 
       <h1>great parks make great neigborhoods</h1>
       <p>
-        The Friends of Grand Rapids Parks is an independent, citizen led, nonprofit enterprise founded in 2008, working closely with but separate from the city. Our mission is to identify specific park projects, mobilize people, and generate resources to protect, enhance, and expand the city's parks and public spaces. 
+        The Friends of Grand Rapids Parks is an independent, citizen led, nonprofit enterprise founded in 2008, working closely with but separate from the city. Our mission is to identify specific park projects, mobilize people, and generate resources to protect, enhance, and expand the city's parks and public spaces.
         <a href="http://www.friendsofgrparks.org/about">Learn more</a>
       </p>
       <hr/>
