@@ -345,7 +345,7 @@ label.collection_check_boxes {
 
 
 
-form.edit_park fieldset a{
+form.edit_park fieldset a.remove_fields{
   font: normal 14px/1.5 arial,sans-serif;
   color: #000;
   padding: 5px;
@@ -358,7 +358,7 @@ form.edit_park fieldset a{
   }
 
 
-form.edit_park fieldset a:hover{
+form.edit_park fieldset a.remove_fields:hover{
   background: #fff;
   border-color: #eee;
   }
