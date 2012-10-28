@@ -150,7 +150,7 @@ body{
     border-bottom: solid 5px #ceda51;
     }
     .wrapper{
-      max-width: 900px;
+      width: 900px;
       margin: 0 auto;
       text-align: left;
       }
@@ -277,7 +277,7 @@ body{
       clear: left;
       display: inline;
       width: 280px;
-      width: 31%;
+      /*width: 31%;*/
       padding: 0 20px;
       background: url(../bg_sidebar.png) 0 0 repeat;
       }
