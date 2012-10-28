@@ -46,7 +46,7 @@ $(function() {
 	}
 
 	// make the amentify multi-select prettier
-	$('#amenity_id').chosen({
+	var amenitySearch = $('#amenity_id').chosen({
 		no_results_text : "No results matched"
 	});
 
@@ -54,14 +54,10 @@ $(function() {
 	$('.search-input').on('change refresh', function(e) {
 		var $form = $('#search-form'), $distanceSearch = $('.distance-search'), address = $('#address').val();
 
-		if (!address) {
-			$distanceSearch.prop('disabled', true);
-		}
-
+		// hack so we don't serialize address field if it's empty
+		if (!address) $distanceSearch.prop('disabled', true);
 		var data = $form.serialize();
-
 		$distanceSearch.prop('disabled', false);
-
 		$.getJSON('/parks.json', data, refreshParkList);
 	});
 
@@ -80,6 +76,14 @@ $(function() {
 				$('.search-input').trigger('refresh');
 			}
 		});
+	});
+	
+	$('.filterReset').on('click', function(e) {
+		e.preventDefault();
+		$('#address').val('');
+		$("#amenity_id").val([]); 
+		amenitySearch.trigger("liszt:updated");
+		$('.search-input').trigger('change');
 	});
 
 	// build and populate the map
