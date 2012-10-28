@@ -119,6 +119,6 @@ $(function() {
 			}
 		}
 
-		$.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=10&extras=url_n,url_s&api_key=" + key + "&method=" + api_method, callback);
+		$.getJSON("http://www.flickr.com/services/rest/?jsoncallback=?&format=json&per_page=20&extras=url_n,url_s&api_key=" + key + "&method=" + api_method, callback);
 	});
 });
