@@ -1,24 +1,22 @@
 class ParksController < ApplicationController
   def index
     @amenities = Amenity.all
-	@allParks = Park.all
+  	@allParks = Park.all
     if params[:amenity_id].present?
       @parks = Park.joins(:amenities).where("amenities.id = ?", params[:amenity_id])
     else 
       @parks = @allParks
     end
   
-  if params[:distance].present?
-   distance = params[:distance].to_f
-   lat = params[:lat].to_f
-   lng = params[:lng].to_f
-   @parks = @parks.select{ |x| haversine_distance(lat, lng, x.latitude, x.longitude) < distance }
-  end
+    if params[:distance].present?
+      distance = params[:distance].to_f
+      lat = params[:lat].to_f
+      lng = params[:lng].to_f
+      @parks = @parks.select{ |x| haversine_distance(lat, lng, x.latitude, x.longitude) < distance }
+    end
 
     @facts = Fact.find(Fact.pluck(:id).sample(4))
   
-  puts "@parks => " + @parks.to_s
-
     respond_to do |format|
       format.html
       format.js
