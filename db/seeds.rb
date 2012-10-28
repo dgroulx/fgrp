@@ -570,6 +570,53 @@ Amenity.create([
     {question: "Most Common Street Tree", answer: "Norway Maple"}
     ])
 
-  google = ParkLink.create(name: "Google", url: "http://www.google.com")
-  aberdeen.links << google
+  ParkLink.destroy_all
+  ParkLink.create([
+  	{name: %Q|Riverside Ash Program Study|, url: %Q|http://www.grcity.us/download_upload/binary_object_cache/frontpage_riverside%20park%20ash%20tree%20program.pdf|, park_id: 1},
+{name: %Q|Trees of Cherry Park Tree Tour Brochure|, url: %Q|http://www.grand-rapids.mi.us/index.pl?binobjid=12119.|, park_id: 49},
+{name: %Q|Home of East Hills Council of Neighbors|, url: %Q|http://www.easthillscouncil.org/|, park_id: 49},
+{name: %Q|Hoop City Website|, url: %Q|http://www.hoopcitybasketball.com/hoopcity2/index.html|, park_id: 80},
+{name: %Q|Indian Trails Golf Course|, url: %Q|http://www.indiantrailsgc.com/|, park_id: 57},
+{name: %Q|Joe Taylor Grand Opening|, url: %Q|http://www.mlive.com/news/grand-rapids/index.ssf/2011/06/grand_rapids_opens_joe_taylor.html|, park_id: 58},
+{name: %Q|Kent County Civil War Memorial|, url: %Q|http://www.civilwarmonument.org/|, park_id: 19},
+{name: %Q|Fulton Street Farmers Market|, url: %Q|http://fultonstreetmarket.org/|, park_id: 53},
+{name: %Q|Perkins Community Garden|, url: %Q|http://www.foodshed.net/perkins/|, park_id: 5},
+{name: %Q|Joni Mitchell would love it|, url: %Q|http://www.friendsofgrparks.org/newsroom?mode=PostView&bmi=528523|, park_id: 87},
+{name: %Q|Grand Rapids Newest Park|, url: %Q|http://www.friendsofgrparks.org/newsroom?mode=PostView&bmi=774240|, park_id: 87},
+{name: %Q|Private funds still needed after Grand Rapids gets $300,000 state grant for 'Pleasant Park' |, url: %Q|http://www.friendsofgrparks.org/newsroom?mode=PostView&bmi=774236|, park_id: 87},
+{name: %Q|FOX 17 Coverage|, url: %Q|http://www.fox17online.com/videogallery/66210353/News/New-Grand-Rapids-Park---11.19.11|, park_id: 88},
+{name: %Q|Parkland Deal - GR Press|, url: %Q|http://www.friendsofgrparks.org/newsroom?mode=PostView&bmi=870847|, park_id: 84},
+{name: %Q|Grand Rapids Mountain Bike Park Website|, url: %Q|http://grbikepark.com/|, park_id: 89},
+{name: %Q|Add Your Photos of Fishladder|, url: %Q|http://www.flickr.com/groups/1321127@N22/|, park_id: 28},
+{name: %Q|Add your photos of Aberdeen|, url: %Q|http://www.flickr.com/groups/1290983@N23|, park_id: 3},
+{name: %Q|Add your photos of Ah-Nab-Awen|, url: %Q|http://www.flickr.com/groups/1239552@N25|, park_id: 23},
+{name: %Q|Add your photos of Briggs|, url: %Q|http://www.flickr.com/groups/1261722@N20|, park_id: 7},
+{name: %Q|Garfield Park Neighborhood Assoc.|, url: %Q|http://www.gpnagr.org/|, park_id: 54},
+{name: %Q|Grand Rapids History|, url: %Q|http://www.historygrandrapids.org/explore.php?essay=21&cat=3|, park_id: 54},
+{name: %Q|Sprite Spark Park - Vote|, url: %Q|http://www.mycokerewards.com/showLBE.do?type=pillar&id=spriteSparks&size=3|, park_id: 81},
+{name: %Q|Add your photos of Mary Water|, url: %Q|http://www.flickr.com/groups/1291950@N23/|, park_id: 17},
+{name: %Q|submit your photos of Wilcox|, url: %Q|http://www.flickr.com/groups/1914489@N20/|, park_id: 71},
+{name: %Q|post your pictures of Roosevelt Park|, url: %Q|http://www.flickr.com/groups/1914497@N20/|, park_id: 80},
+{name: %Q|add your photos of KInsington Park|, url: %Q|http://www.flickr.com/groups/1974852@N20/|, park_id: 78},
+{name: %Q|add your photos of the Bike Park|, url: %Q|http://www.flickr.com/groups/1933394@N24/|, park_id: 89},
+{name: %Q|add your photos of the Bike Park|, url: %Q|http://www.flickr.com/groups/1933394@N24/|, park_id: 89},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 3},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 23},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 26},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 25},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 76},
+{name: %Q|Clemente Skatepark|, url: %Q|http://www.clementeskatepark.org/|, park_id: 76},
+{name: %Q|Office of Special Events: rental & reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 54},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 77},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 58},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 16},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 37},
+{name: %Q|WinterWest|, url: %Q|http://welcomewest.org/winterwest/|, park_id: 37},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 1},
+{name: %Q|A pool for the people: the building of Richmond Pool and Bathhouse|, url: %Q|http://www.historygrandrapids.org/explore.php?cat=4&essay=17*|, park_id: 37},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 40},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 41},
+{name: %Q|Office of Special Events - Rental & Reservations|, url: %Q|http://grcity.us/police-department/Office%20of%20Film,%20Music%20and%20Special%20Events/Pages/Applications.aspx|, park_id: 71},
+{name: %Q|Riverside Tree Tour Map|, url: %Q|http://www.grcity.us/public-services/Parks-Recreation-Forestry/Documents/14399_Riverside%20Park%20Tree%20brochure_final%20for%20website.pdf|, park_id: 1}
+])
 end
