@@ -9,7 +9,13 @@ class Park < ActiveRecord::Base
   accepts_nested_attributes_for :park_amenities, reject_if: lambda { |a| a[:amenity_id].blank? }, allow_destroy: true
 
   validates :name, presence: true, uniqueness: true
-  validates :address, :longitude, :latitude, presence: true
+  validates :address, presence: true
+
+  validates :latitude, presence: true,
+                       numericality: {greater_than_or_equal_to: -89.9999, less_than_or_equal_to: 89.9999}
+
+  validates :longitude, presence: true,
+                        numericality: {greater_than_or_equal_to: 180, less_than_or_equal_to: 180}
 
   before_create :generate_slug
   before_save :generate_slug
