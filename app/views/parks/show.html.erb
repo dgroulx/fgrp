@@ -25,12 +25,12 @@
           <li><strong><%= @park.park_size %> Acres</strong></li>
         <% end %>
         <% if @park.contact_info.present? %>
-          <li><strong><%= @park.contact_info %></strong></li>
+          <li><strong><%= raw @park.contact_info %></strong></li>
         <% end %>
       </ul>
 
       <section class="section-history">
-        <%= @park.history %>
+        <%= raw @park.history %>
       </section><!-- .section-history //-->
 
       <% if @park.amenities.present? %>

@@ -1,5 +1,5 @@
 class Amenity < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :id, :name
 
   validates :name, :presence => true
   
