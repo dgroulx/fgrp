@@ -45,7 +45,8 @@ $(function() {
 			mapTypeId : google.maps.MapTypeId.ROADMAP,
 			disableDefaultUI : true,
 			zoomControl: true,
-			panControl: true
+			panControl: true,
+			mapTypeControl: true
 		};
 		map = new google.maps.Map($canvas[0], mapOptions);
 		$.getJSON(url, refreshParkList);
