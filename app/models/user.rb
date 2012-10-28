@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  default_scope order('email ASC')
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable, :registerable and :omniauthable
