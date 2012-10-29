@@ -29,12 +29,12 @@ gem 'redcarpet'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-group :develop, :test do
+group :development, :test do
   gem 'debugger'
   gem 'sqlite3'
 end
 
-group :develop do
+group :development do
   gem 'guard'
   gem 'guard-test'
   gem 'guard-bundler'
