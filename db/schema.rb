@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028162459) do
+ActiveRecord::Schema.define(:version => 20121029143355) do
 
   create_table "amenities", :force => true do |t|
     t.string   "name"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(:version => 20121028162459) do
     t.float    "longitude"
     t.float    "park_size"
     t.text     "address"
-    t.string   "vimeo_embed"
+    t.text     "vimeo_embed",         :limit => 255
     t.string   "flickr_pool"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "slug"
     t.boolean  "is_parks_alive"
     t.text     "parks_alive_content"
