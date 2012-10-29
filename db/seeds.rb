@@ -5,10 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-if Rails.env != "production"
-  User.destroy_all
-  User.create(email: "admin@fgrp.org", password: "password", password_confirmation: "password", admin: true)
-  User.create(email: "user@fgrp.org", password: "password", password_confirmation: "password")
+User.destroy_all
+User.create(email: "admin@fgrp.org", password: "password", password_confirmation: "password", admin: true)
+User.create(email: "user@fgrp.org", password: "password", password_confirmation: "password")
 
 Amenity.destroy_all
 Amenity.create([
@@ -559,13 +558,12 @@ Amenity.create([
 {id: 313, park_id: 6, amenity_id: 26, description: %Q|4 - constructed 2012|}
     ]);
 
-  Fact.destroy_all
-  Fact.create([
-    {question: "Largest City Park", answer: "Aman Park, 331 acers"},
-    {question: "Smallet City Park", answer: "Sundial Park, 0.005 acers"},
-    {question: "First Park Bond", answer: "1911, adding 180 acers"},
-    {question: "Newest Playground", answer: "Aberdeen Park"},
-    {question: "Number of Basketball Courts", answer: "58"},
-    {question: "Most Common Street Tree", answer: "Norway Maple"}
-    ])
-end
+Fact.destroy_all
+Fact.create([
+  {question: "Largest City Park", answer: "Aman Park, 331 acers"},
+  {question: "Smallet City Park", answer: "Sundial Park, 0.005 acers"},
+  {question: "First Park Bond", answer: "1911, adding 180 acers"},
+  {question: "Newest Playground", answer: "Aberdeen Park"},
+  {question: "Number of Basketball Courts", answer: "58"},
+  {question: "Most Common Street Tree", answer: "Norway Maple"}
+  ])
