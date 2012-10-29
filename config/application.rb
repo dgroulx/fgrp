@@ -66,6 +66,12 @@ module Fgrp
     # Custom manifest files
     config.assets.precompile += ['admin.js', 'visitor.js']
 
+    # Add the fonts path
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+
     config.to_prepare do
       Devise::SessionsController.layout "devise"
       #Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
