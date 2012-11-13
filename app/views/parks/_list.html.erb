@@ -1,10 +1,11 @@
-      <section class="section-park-list">
-        <h2>All our parks:</h2>
-        <ul class="park-list clearfix">
-        <% @allParks.each do |park| %>
-          <li class="<%= cycle("col1", "col2", "col3", "col4") %>">
-            <%= link_to park.name,park_path(park) %>
-          </li>
-        <% end %>
-        </ul>
-      </section>
+<section class="section-park-list">
+  <h2>All our parks:</h2>
+  <ul class="park-list clearfix">
+  <% @allParks.each do |park| %>
+    <li class="<%= cycle("col1", "col2", "col3", "col4") %>">
+      <%= link_to park.name, park_path(park) %>
+      <%= park.address %>
+    </li>
+  <% end %>
+  </ul>
+</section>
