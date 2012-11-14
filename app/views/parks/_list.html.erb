@@ -3,8 +3,12 @@
   <ul class="park-list clearfix">
   <% @allParks.each do |park| %>
     <li class="<%= cycle("col1", "col2", "col3", "col4") %>">
-      <%= link_to park.name, park_path(park) %>
-      <%= park.address %>
+      <%= # link_to park.name, park_path(park) %>
+      <%= # park.address %>
+      <a href='#{park.path(park)}'>
+        <%= park.name %>
+        <div class="addr"><%= park.address %></div>
+      </a>
     </li>
   <% end %>
   </ul>
