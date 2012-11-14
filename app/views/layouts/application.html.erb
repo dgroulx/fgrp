@@ -10,6 +10,7 @@
 
     <%= yield %>
 
+    <%= render partial: "common/footer" %>
     <%= javascript_include_tag "visitor" %>
     <%= javascript_include_tag "modernizr-2.6.1.min" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{CONFIG[:google_api_key]}&sensor=false" %>
