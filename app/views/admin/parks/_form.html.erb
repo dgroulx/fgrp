@@ -17,17 +17,17 @@
     <%= f.input :parks_alive_content, label: "Sidebar Content. <a href='http://en.wikipedia.org/wiki/Markdown'>Markdown enabled</a>" %>
   </fieldset>
 
-  Amenities
+  <p>Amenities</p>
   <%= f.simple_fields_for :park_amenities do |builder| %>
     <%= render "park_amenity_fields", f: builder %>
   <% end %>
   <%= link_to_add_fields "Add Amenity", f, :park_amenities %>
 
-  Links
+  <p>Links</p>
   <%= f.simple_fields_for :links do |builder| %>
     <%= render "link_fields", f: builder %>
   <% end %>
-  <%= link_to_add_fields "Add Link", f, :links %>
+  <p><%= link_to_add_fields "Add Link", f, :links %></p>
 
   <%= f.button :submit %>
 <% end %>

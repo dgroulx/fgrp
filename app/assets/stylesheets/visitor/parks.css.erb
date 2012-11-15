@@ -423,13 +423,15 @@ section {
   }
 
 
-  section img,
   #map_canvas,
   #flickr-pool-slideshow
   {
     float: right;
     margin-left: 30px;
   }
+  section img{
+    float: right;
+    }
   section ul li{
     float: left;
     width: 50%;
@@ -463,18 +465,6 @@ section {
   margin-top: 10px;
   border-top: 1px solid #5f9f50;
   }
-.park-list a{
-  display: block;
-  transition: all 333ms ease 0s;
-  -moz-transition: all 333ms ease 0s;
-  -webkit-transition: all 333ms ease 0s;
-  -o-transition: all 333ms ease 0s;
-  }
-.park-list li:hover{
-  color: #565961;
-  background: rgba(0,0,0,0.1);
-  text-decoration: none;
-  }
   .park-list > li{
     float: left;
     width: 25%;
@@ -482,9 +472,29 @@ section {
   .park-list > li.col1{
     clear: left;
     }
-    .park-list a{
-      padding: 5px;
+  .park-list a{
+    display: block;
+    padding: 5px 20px 5px 5px;
+    transition: all 333ms ease 0s;
+    -moz-transition: all 333ms ease 0s;
+    -webkit-transition: all 333ms ease 0s;
+    -o-transition: all 333ms ease 0s;
+    text-decoration: none;
+    }
+  .park-list a:hover{
+    text-decoration: none;
+    background: rgba(0,0,0,0.1);
+    }
+    .park-list a .park-name{
+      text-decoration: underline;
       }
+    .park-list a:hover .park-name,
+    .park-list a .addr
+    {
+      color: #565961;
+      text-decoration: none;
+    }
+
 
 
 

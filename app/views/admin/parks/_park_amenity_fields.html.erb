@@ -1,5 +1,5 @@
 <fieldset>
-  <%= f.association :amenity %>
+  <%= f.association :amenity, include_blank: false %>
   <%= f.input :description %>
   <%= f.hidden_field :_destroy %>
   <%= link_to "remove", "#", class: "remove_fields" %>
