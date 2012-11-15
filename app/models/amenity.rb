@@ -1,5 +1,5 @@
 class Amenity < ActiveRecord::Base
-  attr_accessible :id, :name
+  attr_accessible :name
 
   default_scope order('name ASC')
  
