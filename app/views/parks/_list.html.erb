@@ -4,7 +4,7 @@
   <% @allParks.each do |park| %>
     <li class="<%= cycle("col1", "col2", "col3", "col4") %>">
       <a href="<%= park_path(park) %>">
-      <%= park.name %>
+        <div class="park-name"><%= park.name %></div>
         <div class="addr"><%= park.address %></div>
       </a>
     </li>
