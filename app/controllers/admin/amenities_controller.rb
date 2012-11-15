@@ -8,6 +8,7 @@ class Admin::AmenitiesController < Admin::AdminController
   end
 
   def create
+    @amenity = Amenity.new(params[:amenity])
     if @amenity.save
       redirect_to admin_amenities_path
     else
