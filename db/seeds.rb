@@ -53,13 +53,11 @@ park_amenities.each do |park_amenity|
   park = park_hash[park_amenity_row["park_id"]]
   amenity = amenity_hash[park_amenity_row["amenity_id"]]
   description = park_amenity_row["description"]
-#  park_id = park_hash[park_amenity_row["park_id"]]["id"] if park_hash
-#  amenity_id = amenity_hash[park_amenity_row["amenity_id"]]["id"] 
   
   if park and amenity 
     ParkAmenity.create!(description: description,
-                        park_id: park["id"],
-                        amenity_id: amenity["id"])
+                        park_id: Park.find_by_name(park["name"]).id,
+                        amenity_id: Amenity.find_by_name(amenity["name"]).id
   end
 end
 
