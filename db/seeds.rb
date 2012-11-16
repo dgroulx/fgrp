@@ -57,7 +57,7 @@ park_amenities.each do |park_amenity|
   if park and amenity 
     ParkAmenity.create!(description: description,
                         park_id: Park.find_by_name(park["name"]).id,
-                        amenity_id: Amenity.find_by_name(amenity["name"]).id
+                        amenity_id: Amenity.find_by_name(amenity["name"]).id)
   end
 end
 
