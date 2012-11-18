@@ -10,7 +10,7 @@
   <% @amenities.each do |amenity| %>
   <tr>
     <td><%= link_to amenity.name, edit_admin_amenity_path(amenity) %></td>
-    <td><%= link_to "Delete", [:admin, amenity], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to "Delete", [:admin, amenity], method: :delete, data: { confirm: "Are you sure you want to delete #{amenity.name}?" } %></td>
   </tr>
   <% end %>
 </table>
