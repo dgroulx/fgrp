@@ -49,15 +49,15 @@ park_amenities.each do |park_amenity|
     result[col[0]] = col[1].present? ? col[1].strip : nil
     result
   end
-
+  
   park = park_hash[park_amenity_row["park_id"]]
   amenity = amenity_hash[park_amenity_row["amenity_id"]]
   description = park_amenity_row["description"]
   
   if park and amenity 
     ParkAmenity.create!(description: description,
-                        park_id: Park.find_by_name(park["name"]).id,
-                        amenity_id: Amenity.find_by_name(amenity["name"]).id)
+                        park: Park.find_by_name(park["name"]),
+                        amenity: Amenity.find_by_name(amenity["name"]))
   end
 end
 
