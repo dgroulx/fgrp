@@ -14,12 +14,12 @@ gem 'redcarpet'
 
 group :development, :test do
   gem 'debugger'
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
-group :production do
+#group :production do
   gem 'pg'
-end
+#end
 
 group :development do
   gem 'guard'
