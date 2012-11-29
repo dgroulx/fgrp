@@ -12,13 +12,15 @@ gem 'devise'
 gem 'cancan'
 gem 'redcarpet'
 
+gem 'capistrano'
+
 group :development, :test do
   gem 'debugger'
   gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
+  gem 'mysql'
 end
 
 group :development do

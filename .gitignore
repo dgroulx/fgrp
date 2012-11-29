@@ -22,5 +22,5 @@
 # Ignore vim trash
 *.swp
 
-# 
-.DS_Store
+# Keep configuration out of the repo
+/config/application.yml
