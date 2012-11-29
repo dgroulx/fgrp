@@ -24,3 +24,4 @@
 
 # Keep configuration out of the repo
 /config/application.yml
+/config/database.yml
