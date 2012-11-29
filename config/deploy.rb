@@ -2,8 +2,11 @@ require "bundler/capistrano"
 
 server "helsinki.dreamhost.com", :web, :app, :db, primary: true
 
+set :application, "fgrp"
+set :user, "friendsofgrparks"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
+set :deploy_to, "/home/#{user}/explore.friendsofgrparks.org"
 set :deploy_via, :remote_cache
 set :branch, "master"
 set :git_shallow_clone, 1
@@ -15,7 +18,7 @@ set :use_sudo, false
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
-  task :setup_config, roles: app do
+  task :setup_config, roles: :app do
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/application.example.yml"), "#{shared_path}/config/database.yml"
