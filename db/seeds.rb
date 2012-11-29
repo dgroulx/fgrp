@@ -1,9 +1,5 @@
 require 'csv'
 
-User.destroy_all
-User.create(email: "admin@fgrp.org", password: "password", password_confirmation: "password", admin: true)
-User.create(email: "user@fgrp.org", password: "password", password_confirmation: "password")
-
 Park.destroy_all
 Amenity.destroy_all
 ParkAmenity.destroy_all
