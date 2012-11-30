@@ -2,22 +2,28 @@ require "bundler/capistrano"
 
 server "helsinki.dreamhost.com", :web, :app, :db, primary: true
 
-set :application, "fgrp"
+set :application, "explore.friendsofgrparks.org"
 set :user, "friendsofgrparks"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
-set :deploy_to, "/home/#{user}/explore.friendsofgrparks.org"
+set :copy_remote_dir, "/home/#{user}"
+set :deploy_to, "/home/#{user}/#{application}"
 set :deploy_via, :remote_cache
 set :branch, "master"
 set :git_shallow_clone, 1
 set :scm_verbose, true
 
-set :chmod755, "app config db lib public vendor script script/* public/disp*"
+set :chmod755, "app config db lib public vendor script script/*"
 set :use_sudo, false
 
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
+  [:start, :stop].each do |t|
+     desc "{t} task is a no-op with mod_rails"
+     task t, :roles => :app do; end
+  end
+
   task :setup_config, roles: :app do
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
@@ -27,8 +33,8 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
 
   task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml} #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/config/application.yml} #{release_path}/config/application.yml}"
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml}"
   end
 
   desc "Make sure local git is in sync with remote."
