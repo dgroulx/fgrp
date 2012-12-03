@@ -4,10 +4,10 @@ Fgrp::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :parks, except: [:show]
-    resources :amenities, except: [:show]
-    resources :users, except: [:show]
-    resources :facts, except: [:show]
+    resources :parks, :except => [:show]
+    resources :amenities, :except => [:show]
+    resources :users, :except => [:show]
+    resources :facts, :except => [:show]
     root :to => "parks#index"
   end
 

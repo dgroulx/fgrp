@@ -3,18 +3,18 @@
 
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :latitude, as: :string %>
-  <%= f.input :longitude, as: :string %>
-  <%= f.input :park_size, as: :string %>
+  <%= f.input :latitude, :as => :string %>
+  <%= f.input :longitude, :as => :string %>
+  <%= f.input :park_size, :as => :string %>
   <%= f.input :history %>
   <%= f.input :vimeo_embed %>
   <%= f.input :flickr_pool %>
-
+  
   <fieldset>
     <legend>Parks Alive</legend>
-    <%= f.input :is_parks_alive, label: "Parks Alive Enabled?" %>
+    <%= f.input :is_parks_alive, :label => "Parks Alive Enabled?" %>
     <%= f.input :parks_alive_contact %>
-    <%= f.input :parks_alive_content, label: "Sidebar Content. <a href='http://en.wikipedia.org/wiki/Markdown'>Markdown enabled</a>" %>
+    <%= f.input :parks_alive_content, :label => "Sidebar Content. <a href='http://en.wikipedia.org/wiki/Markdown'>Markdown enabled</a>" %>
   </fieldset>
 
   <p>Amenities</p>

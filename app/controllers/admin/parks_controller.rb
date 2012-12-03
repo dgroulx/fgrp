@@ -1,5 +1,5 @@
 class Admin::ParksController < Admin::AdminController
-  load_resource find_by: :slug
+  load_resource :find_by => :slug
   authorize_resource
 
   def index
