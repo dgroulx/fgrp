@@ -2,7 +2,7 @@
 <div class="page-body clearfix">
   <div class="wrapper">
 
-    <%= render partial: "common/header" %>
+    <%= render :partial => "common/header" %>
 
     <aside>
       <h1>explore the city</h1>
@@ -41,7 +41,7 @@
 		   <label for="distance">Find parks within </label>
 		   <select class="distance-search search-input" name="distance" id="distance">
 	       <% (1..20).each do |i| %>
-            <option><%=i%></option>
+            <option><%= i %></option>
          <%end%>
 		   </select>
 		   <label for="address"> miles of </label>

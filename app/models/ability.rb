@@ -9,7 +9,7 @@ class Ability
       can :manage, Park
       can :manage, ParkLink
       can :manage, Fact
-      can [:read, :update], User, id: user.id
+      can [:read, :update], User, :id => user.id
     end
 
     # Define abilities for the passed in user here. For example:

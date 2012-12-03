@@ -8,9 +8,9 @@ Fgrp::Application.routes.draw do
     resources :amenities, except: [:show]
     resources :users, except: [:show]
     resources :facts, except: [:show]
-    root to: "parks#index"
+    root :to => "parks#index"
   end
 
-  resources :parks, only: [:index, :show] 
-  root to: "parks#index"
+  resources :parks, :only => [:index, :show] 
+  root :to => "parks#index"
 end

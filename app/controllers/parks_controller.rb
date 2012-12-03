@@ -21,7 +21,7 @@ class ParksController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-      format.json { render json: @parks.to_json }
+      format.json { render :json => @parks.to_json }
     end
   end
 
@@ -31,7 +31,7 @@ class ParksController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-      format.json { render json: @park.to_json }
+      format.json { render :json => @park.to_json }
     end
   end
 

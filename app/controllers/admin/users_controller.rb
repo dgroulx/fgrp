@@ -22,10 +22,10 @@ class Admin::UsersController < Admin::AdminController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to admin_users_path }
-        format.json { render nothing: true }
+        format.json { render :nothing => true }
       else
         format.html { render 'new' }
-        format.json { render nothing: true }
+        format.json { render :nothing => true }
       end
     end
   end
