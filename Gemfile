@@ -20,9 +20,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do
-  gem 'mysql2'
-end
+gem 'mysql'
 
 group :development do
   gem 'guard'
