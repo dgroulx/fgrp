@@ -1,3 +1,9 @@
+# Add location of gems to path on dreamhost shared
+set :default_environment, {
+  'PATH' => "/usr/lib/ruby/gems/1.8/bin/:$PATH"
+}
+set :bundle_without, [:test, :development]
+
 require "bundler/capistrano"
 
 server "helsinki.dreamhost.com", :web, :app, :db, primary: true
@@ -8,7 +14,7 @@ set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
 set :copy_remote_dir, "/home/#{user}"
 set :deploy_to, "/home/#{user}/#{application}"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :branch, "master"
 set :git_shallow_clone, 1
 set :scm_verbose, true

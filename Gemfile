@@ -29,8 +29,8 @@ group :development do
   gem 'guard-bundler'
 
   # OS X toys
-  gem 'rb-fsevent', require: false
-  gem 'terminal-notifier-guard', require: false
+  gem 'rb-fsevent', :require => false
+  gem 'terminal-notifier-guard', :require => false
 end
 
 group :test do
@@ -39,6 +39,3 @@ group :test do
   gem 'poltergeist'
   gem 'launchy'
 end
-
-  
-        
