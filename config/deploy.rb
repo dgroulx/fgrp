@@ -24,8 +24,8 @@ namespace :deploy do
   # Asset precompile depends on bundle installed gems
   before "deploy:assets:precompile", "bundle:install"
 
-  [:start, :stop, :restart].each do |t|
-    desc "#{t} unicorn server"
+  [:start, :stop, :restart].each do |command|
+    desc "#{command} unicorn server"
     task command, roles: app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
     end
