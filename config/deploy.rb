@@ -1,12 +1,8 @@
-# Add location of gems to path on dreamhost shared
-set :default_environment, {
-  'PATH' => "/usr/lib/ruby/gems/1.8/bin/:$PATH"
-}
 set :bundle_without, [:test, :development]
 
 require "bundler/capistrano"
 
-server "helsinki.dreamhost.com", :web, :app, :db, :primary => true
+server "ps143751.dreamhost.com", :web, :app, :db, :primary => true
 
 set :application, "explore.friendsofgrparks.org"
 set :user, "friendsofgrparks"
