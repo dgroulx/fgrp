@@ -12,7 +12,7 @@ set :copy_remote_dir, "/home/#{user}"
 set :deploy_to, "/home/#{user}/#{application}"
 set :deploy_via, :copy
 set :branch, "master"
-set :git_shallow_clone, 1
+set :git_shallow_clone, 0
 set :scm_verbose, true
 
 set :chmod755, "app config db lib public vendor script script/*"
@@ -21,6 +21,9 @@ set :use_sudo, false
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
+  # Asset precompile depends on bundle installed gems
+  before "deploy:assets:precompile", "bundle:install"
+
   [:start, :stop].each do |t|
      desc "{t} task is a no-op with mod_rails"
      task t, :roles => :app do; end
