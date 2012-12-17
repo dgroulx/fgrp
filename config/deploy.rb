@@ -18,6 +18,8 @@ set :scm_verbose, true
 set :chmod755, "app config db lib public vendor script script/*"
 set :use_sudo, false
 
+default_run_options[:pty] = true
+
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
