@@ -15,7 +15,6 @@ gem 'cancan'
 gem 'redcarpet'
 
 gem 'capistrano'
-gem 'unicorn'
 
 group :development, :test do
   gem 'sqlite3'
