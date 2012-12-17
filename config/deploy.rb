@@ -4,8 +4,8 @@ require "bundler/capistrano"
 
 server "ps143751.dreamhost.com", :web, :app, :db, :primary => true
 
-set :application, "explore.friendsofgrparks.org"
-set :user, "friendsofgrparks"
+set :application, "explore"
+set :user, "fgrp_vps"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
 set :copy_remote_dir, "/home/#{user}"
