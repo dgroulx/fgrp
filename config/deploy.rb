@@ -17,6 +17,7 @@ set :scm_verbose, true
 
 set :chmod755, "app config db lib public vendor script script/*"
 set :use_sudo, false
+set :pty
 
 after "deploy:restart", "deploy:cleanup"
 
@@ -33,7 +34,7 @@ namespace :deploy do
 
   task :setup_config, :roles => :app do
     run "ln -nfs #{current_path}/config/nginx.conf $HOME/nginx/friendsofgrparks.org/"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}", tty: true
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/application.example.yml"), "#{shared_path}/config/application.yml"
