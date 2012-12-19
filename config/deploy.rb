@@ -2,7 +2,9 @@ set :bundle_without, [:test, :development]
 
 require "bundler/capistrano"
 
-server "ps143751.dreamhost.com", :web, :app, :primary => true
+server "ps143751.dreamhost.com", :web, :app, :db, :primary => true
+# db role means migrations will be run, not that this is the db 
+# server, was news to me.
 
 set :application, "friendsofgrparks.dreamhosters.com"
 set :user, "explore_deployer"
