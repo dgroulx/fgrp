@@ -35,7 +35,7 @@ namespace :deploy do
 
   task :setup_config, :roles => :app do
     run "ln -nfs #{current_path}/config/nginx.conf $HOME/nginx/friendsofgrparks.dreamhosters.com/"
-    run "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    sudo run "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/application.example.yml"), "#{shared_path}/config/application.yml"
