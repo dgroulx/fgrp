@@ -2,10 +2,10 @@ set :bundle_without, [:test, :development]
 
 require "bundler/capistrano"
 
-server "ps143751.dreamhost.com", :web, :app, :db, :primary => true
+server "ps143751.dreamhost.com", :web, :app, :primary => true
 
 set :application, "explore"
-set :user, "fgrp_vps"
+set :user, "explore_deployer"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
 set :copy_remote_dir, "/home/#{user}"
