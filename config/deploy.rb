@@ -4,7 +4,7 @@ require "bundler/capistrano"
 
 server "friendsofgrparks.dreamhosters.com", :web, :app, :primary => true
 
-set :application, "explore"
+set :application, "friendsofgrparks.dreamhosters.com"
 set :user, "explore_deployer"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
