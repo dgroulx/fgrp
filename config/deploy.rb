@@ -2,7 +2,7 @@ set :bundle_without, [:test, :development]
 
 require "bundler/capistrano"
 
-server "friendsofgrparks.dreamhosters.com", :web, :app, :primary => true
+server "ps143751.dreamhost.com", :web, :app, :primary => true
 
 set :application, "friendsofgrparks.dreamhosters.com"
 set :user, "explore_deployer"
