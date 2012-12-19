@@ -34,7 +34,7 @@ namespace :deploy do
   end
 
   task :setup_config, :roles => :app do
-    run "ln -nfs #{current_path}/config/nginx.conf $HOME/nginx/friendsofgrparks.org/"
+    run "ln -nfs #{current_path}/config/nginx.conf $HOME/nginx/friendsofgrparks.dreamhosters.com/"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
@@ -63,4 +63,3 @@ namespace :deploy do
     run "cd '#{current_path}' && #{rake} db:seed RAILS_ENV=#{rails_env}"
   end
 end
-
