@@ -11,4 +11,5 @@
  *= require_self
  *= require chosen/chosen.css
  *= require visitor/parks
+ *= require normalize.min
  */
