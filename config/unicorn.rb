@@ -1,4 +1,4 @@
-root = "/home/explore_deployer/friendsofgrparks.dreamhosters.com/current"
+root = "/home/deployer/explore/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"

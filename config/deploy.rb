@@ -2,12 +2,12 @@ set :bundle_without, [:test, :development]
 
 require "bundler/capistrano"
 
-server "ps143751.dreamhost.com", :web, :app, :db, :primary => true
+server "173.230.138.170", :web, :app, :db, :primary => true
 # db role means migrations will be run, not that this is the db 
 # server, was news to me.
 
-set :application, "friendsofgrparks.dreamhosters.com"
-set :user, "explore_deployer"
+set :application, "explore"
+set :user, "deployer"
 set :scm, "git"
 set :repository, "git@github.com:dgroulx/fgrp.git"
 set :copy_remote_dir, "/home/#{user}"
@@ -19,8 +19,6 @@ set :scm_verbose, true
 
 set :chmod755, "app config db lib public vendor script script/*"
 set :use_sudo, false
-
-default_run_options[:pty] = true
 
 after "deploy:restart", "deploy:cleanup"
 
@@ -36,10 +34,8 @@ namespace :deploy do
   end
 
   task :setup_config, :roles => :app do
-    run "ln -nfs #{current_path}/config/nginx.conf $HOME/nginx/friendsofgrparks.dreamhosters.com/"
-    # Manually copying unicorn_init.sh to /etc/init.d since Dreamhost account management
-    # is an epic fail
-#    sudo run "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    sudo run "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo run "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/application.example.yml"), "#{shared_path}/config/application.yml"

@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 group :assets do
-  gem 'therubyracer'
-  gem 'libv8'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -21,8 +19,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'mysql2'
-
 group :development do
   gem 'guard'
   gem 'guard-test'
@@ -38,4 +34,8 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'launchy'
+end
+
+group :production do
+  gem 'pg'
 end
