@@ -25,3 +25,6 @@
 # Keep configuration out of the repo
 /config/application.yml
 /config/database.yml
+
+# Precompile assets on the server, not locally
+/public/assets
