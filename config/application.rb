@@ -66,7 +66,7 @@ module Fgrp
     config.assets.version = '1.1'
 
     # Custom manifest files
-    config.assets.precompile += ['admin.js', 'visitor.js']
+    config.assets.precompile += ['admin.js', 'visitor.js', 'admin.css', 'visitor.css']
 
     # Add the fonts path
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
